@@ -43,14 +43,15 @@ export function AnimateIn({
 
   const { hidden, visible: visibleClass } = variants[variant];
 
+  const TagComponent = Tag as React.ElementType;
+
   return (
-    // @ts-expect-error dynamic tag
-    <Tag
+    <TagComponent
       ref={ref}
       className={cn("transition-all duration-700 ease-out", hidden, visible && visibleClass, className)}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
-    </Tag>
+    </TagComponent>
   );
 }
