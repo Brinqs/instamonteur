@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react";
-import { navigation, siteConfig } from "@/lib/siteConfig";
+import Image from "next/image";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { siteConfig } from "@/lib/siteConfig";
 
 const services = [
   { label: "CV-ketel installatie", href: "/diensten/cv-ketel" },
@@ -11,6 +12,18 @@ const services = [
   { label: "Spoedservice 24/7", href: "/diensten/spoed" },
 ];
 
+const cities = [
+  { label: "Rotterdam", href: "/steden/rotterdam" },
+  { label: "Dordrecht", href: "/steden/dordrecht" },
+  { label: "Vlaardingen", href: "/steden/vlaardingen" },
+  { label: "Delft", href: "/steden/delft" },
+  { label: "Gouda", href: "/steden/gouda" },
+  { label: "Zoetermeer", href: "/steden/zoetermeer" },
+  { label: "Leiden", href: "/steden/leiden" },
+  { label: "Den Haag", href: "/steden/den-haag" },
+  { label: "Schiedam", href: "/steden/schiedam" },
+];
+
 export function Footer() {
   return (
     <footer className="bg-brand text-white">
@@ -18,44 +31,27 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-orange-500 flex items-center justify-center text-white font-black text-lg">
-                IM
-              </div>
-              <span className="font-black text-xl tracking-tight text-white">
-                Insta<span className="text-orange-400">Monteur</span>
-              </span>
+            <Link href="/" className="inline-flex -mt-14 -mb-12">
+              <Image
+                src="/Instamonteur-logo.png"
+                alt="Insta Monteur"
+                width={400}
+                height={120}
+                className="h-36 w-auto object-contain brightness-0 invert"
+              />
             </Link>
-            <p className="text-white/70 text-sm leading-relaxed mb-5">
-              {siteConfig.description}
+            <p className="text-white/70 text-sm leading-relaxed mb-5 -mt-6" style={{ fontFamily: "var(--font-display)" }}>
+              Dé installatie monteur &amp; loodgieter in Rotterdam, Dordrecht, Delft, Zoetermeer, Vlaardingen en Schiedam.
             </p>
-            <div className="flex gap-2">
-              {[
-                { label: "FB", href: siteConfig.socials.facebook },
-                { label: "IG", href: siteConfig.socials.instagram },
-                { label: "LI", href: siteConfig.socials.linkedin },
-              ].map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-orange-500 flex items-center justify-center transition-colors text-xs font-bold"
-                >
-                  {s.label}
-                </a>
-              ))}
-            </div>
           </div>
 
-          {/* Navigation */}
+{/* Services */}
           <div>
             <h3 className="font-semibold text-sm uppercase tracking-wider text-orange-400 mb-4">
-              Navigatie
+              Diensten
             </h3>
             <ul className="space-y-2.5">
-              {navigation.map((item) => (
+              {services.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -68,13 +64,13 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Steden */}
           <div>
             <h3 className="font-semibold text-sm uppercase tracking-wider text-orange-400 mb-4">
-              Diensten
+              Werkgebied
             </h3>
-            <ul className="space-y-2.5">
-              {services.map((item) => (
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+              {cities.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -140,7 +136,6 @@ export function Footer() {
             <Link href="/voorwaarden" className="hover:text-white transition-colors">
               Algemene voorwaarden
             </Link>
-            <span>KvK: {siteConfig.kvk}</span>
           </div>
         </div>
       </div>

@@ -1,110 +1,84 @@
 import Link from "next/link";
-import { ArrowRight, Flame, Zap, Droplets, Wind, Wrench, Clock } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { ArrowUpRight } from "lucide-react";
+import { AnimateIn } from "@/components/AnimateIn";
 
 const services = [
   {
-    icon: Flame,
-    title: "CV-ketel & verwarming",
-    description:
-      "Installatie, reparatie en onderhoud van CV-ketels en verwarmingssystemen. Alle merken en types.",
-    href: "/diensten/cv-ketel",
-    badge: "Populair",
+    title: "Spoed loodgieter",
+    description: "Directe service bij storingen en lekkages. Dag en nacht, 7 dagen per week.",
+    href: "/contact",
   },
   {
-    icon: Zap,
-    title: "Elektra & bedrading",
-    description:
-      "Groepen, stopcontacten, verlichting en complete elektrische installaties door gecertificeerde elektriciens.",
-    href: "/diensten/elektra",
-    badge: null,
+    title: "Lekkage repareren",
+    description: "Detectie en snelle reparatie van waterlekkages, van druppelende kraan tot ernstige schade.",
+    href: "/contact",
   },
   {
-    icon: Droplets,
-    title: "Loodgieterswerk",
-    description:
-      "Van lekkage reparatie tot het plaatsen van sanitair. Snel en netjes uitgevoerd.",
-    href: "/diensten/loodgieterswerk",
-    badge: null,
+    title: "Warmtepomp installatie",
+    description: "Installatie en onderhoud van warmtepompen. Duurzaam verwarmen met een gecertificeerde installateur.",
+    href: "/contact",
   },
   {
-    icon: Wind,
-    title: "Airconditioning",
-    description:
-      "Plaatsing en onderhoud van airconditioningssystemen voor woning en bedrijf.",
-    href: "/diensten/airconditioning",
-    badge: "Zomer deal",
+    title: "Installateur sanitair",
+    description: "Montage en aansluiting van alle sanitaire voorzieningen. Van toilet tot doucheset.",
+    href: "/contact",
   },
   {
-    icon: Wrench,
-    title: "Ventilatie (WTW)",
-    description:
-      "Installatie van mechanische ventilatie en warmteterugwinsystemen voor een gezond binnenklimaat.",
-    href: "/diensten/ventilatie",
-    badge: null,
-  },
-  {
-    icon: Clock,
-    title: "Spoedservice 24/7",
-    description:
-      "Storing of lekkage? Wij zijn dag en nacht bereikbaar voor spoedklussen. U bent nooit in de kou.",
-    href: "/diensten/spoed",
-    badge: "24/7",
+    title: "CV-ketel installateur",
+    description: "Montage, onderhoud en reparatie van CV-ketels. Alle merken en types.",
+    href: "/contact",
   },
 ];
 
 export function Services() {
   return (
-    <section id="diensten" className="py-20 bg-background">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-12">
-          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">
-            Wat wij doen
-          </span>
-          <h2 className="text-3xl md:text-4xl font-black text-brand mt-2 mb-4">
-            Onze diensten
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Wij zijn uw totaaloplossing voor alle installaties in huis of bedrijf.
-            Vakkundig, snel en met garantie.
-          </p>
+    <section className="bg-white py-24">
+      <div className="container mx-auto px-6 max-w-7xl">
+        {/* Header */}
+        <div className="grid lg:grid-cols-[220px_1fr] gap-8 mb-4">
+          <AnimateIn variant="fadeIn" className="pt-1">
+            <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
+              Onze diensten
+            </span>
+          </AnimateIn>
+          <AnimateIn variant="fadeUp" delay={100}>
+            <h2
+              className="font-black text-brand tracking-tight leading-[0.9]"
+              style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)" }}
+            >
+              INSTALLATEUR NODIG?<br />WIJ ZIJN ER <span className="text-orange-500">SNEL.</span>
+            </h2>
+          </AnimateIn>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => {
-            const Icon = service.icon;
-            return (
-              <Card
-                key={service.title}
-                className="group border-border hover:border-orange-200 hover:shadow-lg transition-all duration-300 overflow-hidden"
-              >
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-brand/8 group-hover:bg-orange-50 flex items-center justify-center transition-colors">
-                      <Icon className="w-6 h-6 text-brand group-hover:text-orange-500 transition-colors" />
-                    </div>
-                    {service.badge && (
-                      <Badge className="bg-orange-100 text-orange-600 border-orange-200 text-xs">
-                        {service.badge}
-                      </Badge>
-                    )}
-                  </div>
-                  <h3 className="font-bold text-lg text-brand mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    {service.description}
-                  </p>
-                  <Link
-                    href={service.href}
-                    className="inline-flex items-center text-orange-500 hover:text-orange-600 text-sm font-semibold transition-colors"
-                  >
-                    Meer informatie
-                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </CardContent>
-              </Card>
-            );
-          })}
+        {/* Divider */}
+        <div className="w-full h-px bg-border mb-0" />
+
+        {/* Service list */}
+        <div>
+          {services.map((service, i) => (
+            <AnimateIn key={service.title} variant="fadeUp" delay={i * 80}>
+            <Link
+              href={service.href}
+              className="group grid lg:grid-cols-[220px_1fr_auto] gap-4 lg:gap-8 py-7 border-b border-border hover:bg-orange-50/50 -mx-6 px-6 transition-colors items-center"
+            >
+              <span className="font-black text-5xl text-border group-hover:text-orange-200 transition-colors leading-none">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3 className="font-black text-xl lg:text-2xl text-brand group-hover:text-orange-500 transition-colors mb-1 tracking-tight">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+              <div className="w-10 h-10 rounded-full border-2 border-border group-hover:border-orange-500 group-hover:bg-orange-500 flex items-center justify-center transition-all shrink-0">
+                <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-white transition-colors" />
+              </div>
+            </Link>
+            </AnimateIn>
+          ))}
         </div>
       </div>
     </section>

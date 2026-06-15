@@ -1,74 +1,79 @@
-import { Star } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-
 const testimonials = [
   {
-    name: "Martijn de Vries",
-    location: "Amsterdam",
-    rating: 5,
-    text: "CV-ketel kapot op vrijdagavond, InstaMonteur was de volgende ochtend al aanwezig. Snel, netjes en een eerlijke prijs. Absoluut aanrader!",
+    name: "Dirk",
+    text: "Erg goed werk geleverd met het plaatsen van een nieuwe CV-ketel. De medewerkers waren klantgericht en hebben mee gedacht in de oplossingen. Dank voor jullie goede werk!",
   },
   {
-    name: "Sandra Bakker",
-    location: "Amstelveen",
-    rating: 5,
-    text: "Geweldig bedrijf! Ze hebben onze complete badkamer opnieuw aangesloten. Vriendelijk, professioneel en het werk is perfect afgeleverd.",
+    name: "Kimberly",
+    text: "Een afspraak maken kan wat lastig zijn ivm drukte, maar echt een topper, vriendelijk, professioneel.",
   },
   {
-    name: "Rob Janssen",
-    location: "Haarlem",
-    rating: 5,
-    text: "Lekkage in het weekend? Geen probleem voor InstaMonteur. Binnen een uur waren ze er. Super service!",
+    name: "Ruben",
+    text: "Medewerkers zijn aardig en vakkundig. Ze kwamen voor een spoedreparatie op een voor hen superdrukke dag. Ergste schade hersteld. Zeker aan te bevelen.",
+  },
+  {
+    name: "Daniel",
+    text: "Ontzettend fijn geholpen! Ook al was het druk, namen ze de tijd om mij te helpen met mijn boiler. Dacht mee en was professioneel. Ik raad hun zeker aan!",
   },
 ];
 
-function Stars({ count }: { count: number }) {
-  return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} className="w-4 h-4 fill-orange-400 text-orange-400" />
-      ))}
-    </div>
-  );
-}
+import { AnimateIn } from "@/components/AnimateIn";
 
 export function Testimonials() {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-12">
-          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">
-            Klantreviews
-          </span>
-          <h2 className="text-3xl md:text-4xl font-black text-brand mt-2 mb-4">
-            Wat onze klanten zeggen
-          </h2>
-          <div className="flex items-center justify-center gap-2 text-muted-foreground">
-            <Stars count={5} />
-            <span className="font-semibold text-foreground">4.9</span>
-            <span>gemiddelde beoordeling · 120+ reviews</span>
+    <section className="bg-[#f7f7f5] py-24">
+      <div className="container mx-auto px-6 max-w-7xl">
+        {/* Header */}
+        <div className="grid lg:grid-cols-[220px_1fr] gap-8 mb-14">
+          <AnimateIn variant="fadeIn" className="pt-1">
+            <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
+              Klantreviews
+            </span>
+          </AnimateIn>
+          <div className="flex items-end justify-between gap-4 flex-wrap">
+            <AnimateIn variant="fadeUp" delay={100}>
+              <h2
+                className="font-black text-brand tracking-tight leading-[0.9]"
+                style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)" }}
+              >
+                Wat <span className="text-orange-500">klanten</span><br />over ons zeggen
+              </h2>
+            </AnimateIn>
+            <AnimateIn variant="fadeUp" delay={200}>
+              <div className="flex items-center gap-2 mb-1">
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-orange-400 text-lg">★</span>
+                  ))}
+                </div>
+                <span className="font-black text-brand text-lg">5.0</span>
+              </div>
+            </AnimateIn>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <Card key={t.name} className="border-border hover:shadow-md transition-shadow">
-              <CardContent className="p-6">
-                <Stars count={t.rating} />
-                <p className="text-foreground/80 text-sm leading-relaxed mt-4 mb-5 italic">
-                  &ldquo;{t.text}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-brand flex items-center justify-center text-white font-bold text-sm">
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-sm text-foreground">{t.name}</div>
-                    <div className="text-xs text-muted-foreground">{t.location}</div>
-                  </div>
+        {/* Quote grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {testimonials.map((t, i) => (
+            <AnimateIn key={t.name} variant="fadeUp" delay={i * 100}>
+            <div
+              className="bg-white rounded-3xl p-7 border border-border hover:shadow-lg transition-shadow flex flex-col h-full"
+            >
+              <div className="text-5xl font-black text-orange-200 leading-none mb-4 font-serif">&ldquo;</div>
+              <p className="text-foreground/75 text-sm leading-relaxed flex-1 italic">
+                {t.text}
+              </p>
+              <div className="mt-6 flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-brand flex items-center justify-center text-white font-black text-xs">
+                  {t.name.charAt(0)}
                 </div>
-              </CardContent>
-            </Card>
+                <div>
+                  <div className="font-bold text-sm text-brand">{t.name}</div>
+                  <div className="text-xs text-muted-foreground">Klant</div>
+                </div>
+              </div>
+            </div>
+            </AnimateIn>
           ))}
         </div>
       </div>

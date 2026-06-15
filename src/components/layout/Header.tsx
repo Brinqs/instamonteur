@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, Phone, X } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, Phone, X, Home } from "lucide-react";
 import { navigation, siteConfig } from "@/lib/siteConfig";
 import { cn } from "@/lib/utils";
 
@@ -13,116 +12,144 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20);
+    const handler = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-border"
-          : "bg-transparent"
-      )}
-    >
-      {/* Top bar */}
-      <div className="bg-brand text-white text-sm py-1.5 hidden md:block">
-        <div className="container mx-auto px-4 flex justify-between items-center max-w-6xl">
-          <span>{siteConfig.openingHours}</span>
-          <a
-            href={`tel:${siteConfig.phone.replace(/\s|-/g, "")}`}
-            className="flex items-center gap-1.5 hover:text-orange-300 transition-colors font-medium"
-          >
-            <Phone className="w-3.5 h-3.5" />
-            {siteConfig.phone}
-          </a>
-        </div>
-      </div>
-
-      {/* Main nav */}
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-brand flex items-center justify-center text-white font-black text-lg group-hover:bg-orange-500 transition-colors duration-200">
-              IM
-            </div>
-            <span className="font-black text-xl tracking-tight text-brand">
-              Insta<span className="text-orange-500">Monteur</span>
-            </span>
-          </Link>
-
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-6">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium text-foreground/80 hover:text-brand transition-colors"
-              >
-                {item.label}
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50">
+        {/* Main nav — verbergt bij scrollen */}
+        <div
+          className={cn(
+            "bg-white border-b border-border transition-all duration-300 overflow-hidden",
+            scrolled ? "h-0 opacity-0" : "h-[72px] opacity-100"
+          )}
+        >
+          <div className="container mx-auto px-6 max-w-7xl">
+            <div className="flex items-center justify-between h-[72px]">
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/Instamonteur-logo.png"
+                  alt="Insta Monteur"
+                  width={160}
+                  height={48}
+                  className="h-40 w-auto object-contain"
+                  priority
+                />
               </Link>
-            ))}
-          </nav>
-
-          {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <a
-              href={`tel:${siteConfig.phone.replace(/\s|-/g, "")}`}
-              className={cn(
-                buttonVariants({ size: "sm" }),
-                "bg-orange-500 hover:bg-orange-600 text-white font-semibold border-orange-500"
-              )}
-            >
-              <Phone className="w-4 h-4 mr-1.5" />
-              Bel direct
-            </a>
-          </div>
-
-          {/* Mobile menu */}
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "md:hidden")}>
-              <Menu className="w-5 h-5" />
-              <span className="sr-only">Menu openen</span>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-72 pt-12">
+              <div className="hidden lg:flex items-center gap-4">
+                <span className="text-sm text-muted-foreground font-medium">Ma–Zo 24/7</span>
+                <a
+                  href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                  className="inline-flex items-center gap-2 bg-brand text-white font-bold px-5 py-2.5 rounded-full text-sm hover:bg-orange-500 transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  {siteConfig.phone}
+                </a>
+              </div>
               <button
-                onClick={() => setOpen(false)}
-                className="absolute top-4 right-4 p-1"
-                aria-label="Menu sluiten"
+                onClick={() => setOpen(true)}
+                className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+                aria-label="Menu openen"
               >
-                <X className="w-5 h-5" />
+                <Menu className="w-5 h-5" />
               </button>
-              <nav className="flex flex-col gap-1 mt-4">
+            </div>
+          </div>
+        </div>
+
+        {/* Subheader — altijd zichtbaar */}
+        <div className={cn(
+          "hidden lg:block bg-brand transition-shadow duration-300 shadow-[0_8px_32px_rgba(15,40,120,0.7)] [clip-path:inset(0_0_-40px_0)]",
+          scrolled && "shadow-[0_8px_32px_rgba(15,40,120,0.7)]"
+        )}>
+          <div className="container mx-auto px-6 max-w-7xl">
+            <div className={cn("flex items-center justify-between transition-all duration-300", scrolled ? "h-14" : "h-11")}>
+              <div className="flex items-center gap-8">
+                <Link href="/" className="text-white hover:text-white/80 transition-colors shrink-0">
+                  <Home className="w-5 h-5" />
+                </Link>
                 {navigation.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="text-base font-medium py-3 px-4 rounded-md hover:bg-muted transition-colors"
+                    className="text-xs font-semibold text-white hover:text-white/80 transition-colors uppercase tracking-wider"
                   >
                     {item.label}
                   </Link>
                 ))}
-                <div className="pt-4 mt-2 border-t">
-                  <a
-                    href={`tel:${siteConfig.phone.replace(/\s|-/g, "")}`}
-                    className={cn(
-                      buttonVariants({ size: "lg" }),
-                      "w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold border-orange-500 justify-center"
-                    )}
+                <span className="text-white/20">|</span>
+                {[
+                  { label: "Loodgieter", href: "/diensten/loodgieter" },
+                  { label: "Centrale verwarming", href: "/diensten/cv-ketel" },
+                  { label: "Warmtepomp", href: "/diensten/warmtepomp-installatie" },
+                ].map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={cn("text-xs font-semibold hover:text-white transition-colors uppercase tracking-wider", scrolled ? "text-white" : "text-white/70")}
                   >
-                    <Phone className="w-4 h-4 mr-2" />
-                    {siteConfig.phone}
-                  </a>
-                </div>
-              </nav>
-            </SheetContent>
-          </Sheet>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+              {scrolled && (
+                <a
+                  href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                  className="inline-flex items-center gap-2 bg-orange-500 text-white font-bold px-4 py-1.5 rounded-full text-xs hover:bg-orange-400 transition-colors"
+                >
+                  <Phone className="w-3 h-3" />
+                  {siteConfig.phone}
+                </a>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Mobile drawer */}
+      {open && (
+        <div className="fixed inset-0 z-[100] lg:hidden">
+          <div
+            className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+            onClick={() => setOpen(false)}
+          />
+          <div className="absolute top-0 right-0 bottom-0 w-72 bg-white shadow-2xl flex flex-col">
+            <div className="flex items-center justify-between px-6 h-[72px] border-b border-border">
+              <Image src="/Instamonteur-logo.png" alt="Insta Monteur" width={120} height={36} className="h-8 w-auto object-contain" />
+              <button
+                onClick={() => setOpen(false)}
+                className="p-2 rounded-lg hover:bg-muted transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <nav className="flex-1 px-4 py-6 flex flex-col gap-1">
+              {navigation.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="font-bold text-base py-3 px-3 rounded-xl hover:bg-orange-50 hover:text-orange-500 transition-colors text-brand"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <div className="p-4 border-t border-border">
+              <a
+                href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                className="flex items-center justify-center gap-2 bg-brand text-white font-bold py-3.5 rounded-full w-full text-sm hover:bg-orange-500 transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                {siteConfig.phone}
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

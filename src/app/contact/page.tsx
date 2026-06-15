@@ -28,14 +28,6 @@ const contactDetails = [
     href: `mailto:${siteConfig.email}`,
   },
   {
-    icon: MapPin,
-    label: "Adres",
-    value: `${siteConfig.address.street}, ${siteConfig.address.zip} ${siteConfig.address.city}`,
-    href: `https://maps.google.com/?q=${encodeURIComponent(
-      `${siteConfig.address.street} ${siteConfig.address.city}`
-    )}`,
-  },
-  {
     icon: Clock,
     label: "Openingstijden",
     value: siteConfig.openingHours,
@@ -47,7 +39,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Page header */}
-      <section className="bg-brand pt-32 pb-16">
+      <section className="bg-brand pt-44 pb-16">
         <div className="container mx-auto px-4 max-w-6xl text-center">
           <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Contact</h1>
           <p className="text-white/70 text-lg max-w-xl mx-auto">

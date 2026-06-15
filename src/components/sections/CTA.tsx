@@ -1,48 +1,60 @@
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/lib/siteConfig";
-import { cn } from "@/lib/utils";
+import { AnimateIn } from "@/components/AnimateIn";
 
 export function CTA() {
   return (
-    <section className="py-20 bg-brand relative overflow-hidden">
+    <section className="bg-orange-500 py-20 overflow-hidden relative">
+      {/* Large background text */}
       <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 50%, white 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
-      <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
-        <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-          Klaar om te starten?
-        </h2>
-        <p className="text-white/75 text-lg max-w-xl mx-auto mb-8">
-          Neem vandaag nog contact op voor een gratis offerte of directe hulp.
-          Wij staan klaar voor u.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a
-            href={`tel:${siteConfig.phone.replace(/\s|-/g, "")}`}
-            className={cn(
-              buttonVariants({ size: "lg" }),
-              "bg-orange-500 hover:bg-orange-600 text-white font-bold text-base h-12 px-8 border-orange-500"
-            )}
-          >
-            <Phone className="w-5 h-5 mr-2" />
-            Bel ons: {siteConfig.phone}
-          </a>
-          <Link
-            href="/contact"
-            className={cn(
-              buttonVariants({ variant: "outline", size: "lg" }),
-              "border-white/30 text-white hover:bg-white/10 font-semibold h-12 px-8 bg-transparent dark:border-white/30"
-            )}
-          >
-            Offerte aanvragen
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
+        className="absolute right-4 top-1/4 -translate-y-1/2 pointer-events-none select-none"
+        aria-hidden="true"
+      >
+        <span
+          className="font-black text-orange-400/30 whitespace-nowrap leading-none"
+          style={{ fontSize: "clamp(14rem, 40vw, 32rem)", letterSpacing: "-0.05em" }}
+        >
+          24/7
+        </span>
+      </div>
+
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <AnimateIn variant="fadeLeft">
+            <h2
+              className="font-black text-white leading-[0.9] tracking-tight"
+              style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
+            >
+              Direct een<br />
+              <span className="text-brand">offerte</span><br />
+              aanvragen?
+            </h2>
+          </AnimateIn>
+          <AnimateIn variant="fadeRight" delay={150}>
+          <div className="flex flex-col gap-4">
+            <p className="text-white/80 text-lg leading-relaxed">
+              Wij zijn Ma t/m Zo 24/7 bereikbaar. Neem vandaag nog contact op
+              en wij staan binnen 20 minuten bij u.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                className="inline-flex items-center justify-center gap-2.5 bg-brand text-white font-bold px-7 py-4 rounded-full hover:bg-brand/90 transition-colors text-base"
+              >
+                <Phone className="w-4 h-4" />
+                {siteConfig.phone}
+              </a>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 bg-white text-brand font-bold px-7 py-4 rounded-full hover:bg-white/90 transition-colors text-base"
+              >
+                Offerte aanvragen
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+          </AnimateIn>
         </div>
       </div>
     </section>

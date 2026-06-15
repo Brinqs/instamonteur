@@ -1,15 +1,15 @@
 export const siteConfig = {
-  name: "InstaMonteur",
-  tagline: "Snel. Vakkundig. Betrouwbaar.",
+  name: "Insta Monteur",
+  tagline: "#1 Beste Loodgietersbedrijf in Zuid-Holland",
   description:
-    "InstaMonteur is uw specialist voor installaties in de regio. Van CV-ketel tot elektra – wij regelen het vakkundig en snel.",
+    "Insta Monteur is dé loodgieter in Rotterdam, Den Haag, Zoetermeer, Leiden, Gouda, Dordrecht, Delft, Schiedam, Vlaardingen en omgeving. Altijd een professionele monteur bij jou in de buurt.",
   url: "https://www.instamonteur.nl",
-  phone: "085 - 000 00 00",
+  phone: "085 060 10 27",
   email: "info@instamonteur.nl",
   address: {
-    street: "Voorbeeldstraat 1",
-    city: "Amsterdam",
-    zip: "1000 AA",
+    street: "Zuid-Holland",
+    city: "Rotterdam",
+    zip: "",
     country: "Nederland",
   },
   socials: {
@@ -17,14 +17,11 @@ export const siteConfig = {
     instagram: "https://instagram.com/instamonteur",
     linkedin: "https://linkedin.com/company/instamonteur",
   },
-  openingHours: "Ma – Vr: 07:00 – 18:00 | Za: 08:00 – 14:00",
+  openingHours: "Ma t/m Zo: 24/7",
   kvk: "12345678",
   btw: "NL123456789B01",
 };
 
 export const navigation = [
-  { label: "Home", href: "/" },
-  { label: "Diensten", href: "/diensten" },
-  { label: "Over ons", href: "/over-ons" },
   { label: "Contact", href: "/contact" },
 ];
