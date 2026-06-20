@@ -17,57 +17,39 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: Flame,
-    title: "CV-ketel & verwarming",
+    icon: Droplets,
+    title: "Loodgieter",
     description:
-      "Installatie, onderhoud en reparatie van CV-ketels, warmtepompen en verwarmingssystemen. Wij werken met alle merken: Remeha, Intergas, Nefit, Vaillant en meer.",
-    features: ["Installatie nieuwe ketel", "Storing diagnose & reparatie", "Jaarlijks onderhoud", "Warmtepomp installatie"],
-    href: "/diensten/cv-ketel",
+      "Van een druppelende kraan tot het volledig aanleggen van een badkamer. Wij lossen al uw sanitaire problemen snel op.",
+    features: ["Lekkage reparatie", "Sanitair plaatsen", "Leidingen aanleggen", "Rioolontstopping"],
+    href: "/loodgieter",
     badge: "Populair",
   },
   {
-    icon: Zap,
-    title: "Elektra & bedrading",
+    icon: Flame,
+    title: "CV-ketel & verwarming",
     description:
-      "Gecertificeerde elektriciens voor uw elektrische installatie. Van een extra stopcontact tot een complete herbedrading van uw woning.",
-    features: ["Groepenkast vervangen", "Extra groepen & stopcontacten", "LED verlichting", "Laadpaal installatie"],
-    href: "/diensten/elektra",
+      "Installatie, onderhoud en reparatie van CV-ketels. Wij werken met alle merken: Remeha, Intergas, Nefit, Vaillant en meer.",
+    features: ["Installatie nieuwe ketel", "Storing diagnose & reparatie", "Jaarlijks onderhoud", "Ketel vervangen"],
+    href: "/cv-ketels",
     badge: null,
-  },
-  {
-    icon: Droplets,
-    title: "Loodgieterswerk",
-    description:
-      "Van een druppelende kraan tot het volledig aanleggen van een badkamer. Wij lossen al uw sanitaire problemen snel op.",
-    features: ["Lekkage reparatie", "Sanitair plaatsen", "Watermeter aansluiting", "Rioolontstopping"],
-    href: "/diensten/loodgieterswerk",
-    badge: null,
-  },
-  {
-    icon: Wind,
-    title: "Airconditioning",
-    description:
-      "Koeling en verwarming in één. Wij installeren split-unit airconditioners voor woning en kantoor.",
-    features: ["Split-unit installatie", "Multi-split systemen", "Periodiek onderhoud", "Koudemiddel bijvullen"],
-    href: "/diensten/airconditioning",
-    badge: "Zomer deal",
   },
   {
     icon: Wrench,
-    title: "Ventilatie (WTW)",
+    title: "Warmtepomp",
     description:
-      "Frisse lucht in huis zonder warmteverlies. Wij installeren en onderhouden mechanische ventilatie en WTW-systemen.",
-    features: ["WTW installatie", "Mechanische afzuiging", "Filterwisseling", "Balancering systeem"],
-    href: "/diensten/ventilatie",
+      "Duurzaam verwarmen met een warmtepomp. Wij installeren lucht/water en hybride warmtepompen in geheel Zuid-Holland.",
+    features: ["Lucht/water warmtepomp", "Hybride systemen", "Periodiek onderhoud", "Gratis advies"],
+    href: "/warmtepomp",
     badge: null,
   },
   {
     icon: Clock,
-    title: "Spoedservice 24/7",
+    title: "Spoed loodgieter 24/7",
     description:
-      "Storing of lekkage? Dag en nacht bereikbaar voor spoedklussen. Wij zijn er wanneer u ons nodig heeft.",
-    features: ["Dag & nacht bereikbaar", "Binnen 2 uur ter plaatse", "Weekenden & feestdagen", "Storingsservice"],
-    href: "/diensten/spoed",
+      "Lekkage of storing? Dag en nacht bereikbaar. Onze spoedmonteurs zijn binnen 20 minuten bij u in Zuid-Holland.",
+    features: ["Dag & nacht bereikbaar", "Binnen 20 min ter plaatse", "Weekenden & feestdagen", "Vaste tarieven"],
+    href: "/spoed-loodgieter",
     badge: "24/7",
   },
 ];

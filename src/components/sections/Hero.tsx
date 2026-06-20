@@ -56,7 +56,7 @@ export function Hero() {
                 <Letters text="MONTEUR" baseDelay={680} className="text-orange-500" style={{ fontSize: "clamp(3.5rem, 7.8vw, 6.4rem)" }} />
               </span>
               <span className="block">
-                <Letters text="IN ROTTERDAM" baseDelay={900} className="text-foreground/40" style={{ fontSize: "clamp(1.7rem, 3.2vw, 2.5rem)", letterSpacing: "0.05em" }} />
+                <Letters text="IN ZUID-HOLLAND" baseDelay={900} className="text-foreground/40" style={{ fontSize: "clamp(1.7rem, 3.2vw, 2.5rem)", letterSpacing: "0.05em" }} />
               </span>
             </h1>
 

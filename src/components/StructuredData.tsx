@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export function LocalBusinessStructuredData() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Plumber",
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
@@ -11,37 +11,30 @@ export function LocalBusinessStructuredData() {
     email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: siteConfig.address.street,
-      addressLocality: siteConfig.address.city,
-      postalCode: siteConfig.address.zip,
+      addressLocality: "Rotterdam",
+      addressRegion: "Zuid-Holland",
       addressCountry: "NL",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 51.9225,
+      longitude: 4.4792,
     },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "07:00",
-        closes: "18:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Saturday"],
-        opens: "08:00",
-        closes: "14:00",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "00:00",
+        closes: "23:59",
       },
     ],
     priceRange: "€€",
     currenciesAccepted: "EUR",
     paymentAccepted: "Cash, Credit Card, Bank Transfer",
-    areaServed: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: 52.3676,
-        longitude: 4.9041,
-      },
-      geoRadius: "30000",
-    },
+    areaServed: [
+      "Rotterdam", "Den Haag", "Dordrecht", "Delft", "Leiden",
+      "Zoetermeer", "Gouda", "Schiedam", "Vlaardingen",
+    ],
     sameAs: [
       siteConfig.socials.facebook,
       siteConfig.socials.instagram,

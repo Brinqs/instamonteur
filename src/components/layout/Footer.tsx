@@ -4,24 +4,22 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { siteConfig } from "@/lib/siteConfig";
 
 const services = [
-  { label: "CV-ketel installatie", href: "/diensten/cv-ketel" },
-  { label: "Elektra & bedrading", href: "/diensten/elektra" },
-  { label: "Loodgieterswerk", href: "/diensten/loodgieterswerk" },
-  { label: "Airconditioning", href: "/diensten/airconditioning" },
-  { label: "Ventilatie", href: "/diensten/ventilatie" },
-  { label: "Spoedservice 24/7", href: "/diensten/spoed" },
+  { label: "Loodgieter", href: "/loodgieter" },
+  { label: "CV-ketel installatie", href: "/cv-ketels" },
+  { label: "Warmtepomp", href: "/warmtepomp" },
+  { label: "Spoed loodgieter 24/7", href: "/spoed-loodgieter" },
 ];
 
 const cities = [
-  { label: "Rotterdam", href: "/steden/rotterdam" },
-  { label: "Dordrecht", href: "/steden/dordrecht" },
-  { label: "Vlaardingen", href: "/steden/vlaardingen" },
-  { label: "Delft", href: "/steden/delft" },
-  { label: "Gouda", href: "/steden/gouda" },
-  { label: "Zoetermeer", href: "/steden/zoetermeer" },
-  { label: "Leiden", href: "/steden/leiden" },
-  { label: "Den Haag", href: "/steden/den-haag" },
-  { label: "Schiedam", href: "/steden/schiedam" },
+  { label: "Rotterdam", href: "/loodgieter-rotterdam" },
+  { label: "Dordrecht", href: "/loodgieter-dordrecht" },
+  { label: "Vlaardingen", href: "/loodgieter-vlaardingen" },
+  { label: "Delft", href: "/loodgieter-delft" },
+  { label: "Gouda", href: "/loodgieter-gouda" },
+  { label: "Zoetermeer", href: "/loodgieter-zoetermeer" },
+  { label: "Leiden", href: "/loodgieter-leiden" },
+  { label: "Den Haag", href: "/loodgieter-den-haag" },
+  { label: "Schiedam", href: "/loodgieter-schiedam" },
 ];
 
 export function Footer() {
