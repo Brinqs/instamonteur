@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Phone, ArrowRight, Wrench, Droplets, Waves, ShieldCheck, Star, CheckCircle } from "lucide-react";
+import { Phone, ArrowRight, Wrench, Droplets, Waves, ShieldCheck, Star, CheckCircle, MapPin } from "lucide-react";
 import { AnimateIn } from "@/components/AnimateIn";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -10,17 +10,36 @@ type CityData = {
   intro: string;
   about: string;
   werkgebied: string;
+  wijken?: string[];
 };
 
 const cities: Record<string, CityData> = {
   rotterdam: {
     name: "Rotterdam",
     intro:
-      "Als u op zoek bent naar een betrouwbare loodgieter in Rotterdam, dan bent u bij Insta Monteur aan het juiste adres. Onze deskundige loodgieters in Rotterdam hebben jarenlange ervaring en zijn uitgerust met de nieuwste technologieën.",
+      "Lekkage, verstopte afvoer of gewoon iemand nodig die eerlijk vertelt wat er aan de hand is? Dan zit je goed bij Insta Monteur. Wij zijn een jong en gedreven loodgietersbedrijf in Rotterdam — geen belsystemen, geen onnodig gedoe. Gewoon een vakman die snel bij je is, duidelijk communiceert en het werk goed doet.",
     about:
-      "Bij Insta Monteur in Rotterdam bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Van lekkages opsporen en verhelpen tot het ontstoppen van afvoeren, het plaatsen van sanitair en het aanleggen van leidingen — wij staan voor u klaar.",
+      "Wij zijn opgericht omdat we het anders wilden doen. Geen vage kostenplaatjes achteraf, geen monteurs die je een kwartier uitleggen wat er allemaal nog meer mis is. Bij Insta Monteur weet je vooraf wat het kost — en we doen precies wat we zeggen.\n\nRotterdam kennen we goed. De jaren-vijftig rijtjeshuizen in IJsselmonde met hun oude leidingen, de appartementen in Prins Alexander waar de afvoer verstopt raakt, de grachtenpanden in Delfshaven met hun eigenzinnige sanitair. We zien dagelijks wat er speelt in deze stad en weten hoe we het snel en netjes oplossen.\n\nOnze monteurs zijn gecertificeerd, werken met kwaliteitsmaterialen en ruimen altijd op. Geen muffe geur van de vorige klus, geen gereedschap dat halverwege ontbreekt. We zijn trots op ons werk — en dat merk je.",
     werkgebied:
-      "Wij zijn actief in Rotterdam en omstreken, waaronder Barendrecht, Spijkenisse, Schiedam, Capelle aan den IJssel, Ridderkerk en regio Rotterdam.",
+      "Wij zijn actief in heel Rotterdam, waaronder Rotterdam Centrum, Noord, Zuid, Kralingen, Feijenoord, IJsselmonde, Charlois, Delfshaven en Prins Alexander. Ook actief in Schiedam, Vlaardingen, Barendrecht, Capelle aan den IJssel, Ridderkerk en Spijkenisse.",
+    wijken: [
+      "Rotterdam Centrum",
+      "Rotterdam Noord",
+      "Rotterdam Zuid",
+      "Kralingen",
+      "Feijenoord",
+      "IJsselmonde",
+      "Charlois",
+      "Delfshaven",
+      "Prins Alexander",
+      "Overschie",
+      "Pernis",
+      "Hoek van Holland",
+      "Barendrecht",
+      "Capelle aan den IJssel",
+      "Schiedam",
+      "Vlaardingen",
+    ],
   },
   dordrecht: {
     name: "Dordrecht",
@@ -77,10 +96,10 @@ const usps = [
 ];
 
 const reviews = [
-  { name: "Dirk", text: "Erg goed werk geleverd met het plaatsen van een nieuwe CV-ketel. Medewerkers waren klantgericht en hebben mee gedacht." },
-  { name: "Kimberly", text: "Een afspraak maken kan lastig ivm drukte, maar echt een topper, vriendelijk en professioneel." },
-  { name: "Ruben", text: "Medewerkers zijn aardig en vakkundig. Zeker aan te bevelen." },
-  { name: "Daniel", text: "Ontzettend fijn geholpen! Professioneel en dachten mee met oplossingen." },
+  { name: "Dirk", location: "Rotterdam", text: "Erg goed werk geleverd met het plaatsen van een nieuwe CV-ketel. Medewerkers waren klantgericht en hebben mee gedacht." },
+  { name: "Kimberly", location: "Rotterdam Zuid", text: "Een afspraak maken kan lastig ivm drukte, maar echt een topper, vriendelijk en professioneel." },
+  { name: "Ruben", location: "Rotterdam Noord", text: "Medewerkers zijn aardig en vakkundig. Zeker aan te bevelen." },
+  { name: "Daniel", location: "Rotterdam Centrum", text: "Ontzettend fijn geholpen! Professioneel en dachten mee met oplossingen." },
 ];
 
 export async function generateStaticParams() {
@@ -95,6 +114,18 @@ export async function generateMetadata({
   const { stad } = await params;
   const city = cities[stad];
   if (!city) return {};
+
+  if (stad === "rotterdam") {
+    return {
+      title: "Loodgieter Rotterdam | Snel Ter Plaatse | Insta Monteur",
+      description:
+        "Loodgieter nodig in Rotterdam? Insta Monteur is uw vakkundige loodgieter voor lekkages, afvoerproblemen en CV-ketels in alle Rotterdamse wijken. Ma–Vr 08:00–17:00. Gratis offerte.",
+      alternates: {
+        canonical: `${siteConfig.url}/loodgieter-rotterdam`,
+      },
+    };
+  }
+
   return {
     title: `Loodgieter ${city.name} | Insta Monteur`,
     description: `Betrouwbare loodgieter in ${city.name}. Insta Monteur is snel ter plaatse voor spoed en regulier loodgieterswerk in ${city.name} en omgeving. Vaste tarieven, gratis offerte.`,
@@ -113,35 +144,75 @@ export default async function LoodgieterStadPage({
   const city = cities[stad];
   if (!city) notFound();
 
-  const faqs = [
+  const isRotterdam = stad === "rotterdam";
+
+  const baseFaqs = [
     {
       question: "Hoe duur is een loodgieter?",
       answer:
-        `De kosten voor een loodgieter in ${city.name} zijn afhankelijk van de situatie en het type werkzaamheden. Bij Insta Monteur werken wij met vaste, transparante tarieven zonder verborgen kosten. Vraag vrijblijvend een offerte aan via onze website of bel ons direct.`,
+        `Dat hangt af van de klus, maar bij Insta Monteur weet je het altijd vooraf. We werken met vaste tarieven en geven je een duidelijke prijsopgave voordat we beginnen. Geen verrassingen op de factuur. Bel ons of vraag een offerte aan — dat is gratis en vrijblijvend.`,
     },
     {
       question: "Hoe kom ik aan een betrouwbare loodgieter?",
       answer:
-        `Een betrouwbare loodgieter in ${city.name} vinden is eenvoudig via Insta Monteur. Wij zijn gecertificeerd, werken met vaste tarieven en hebben jarenlange ervaring in de regio. Onze klanten waarderen onze professionele aanpak en eerlijke communicatie.`,
+        `Lastige vraag, want er zijn er genoeg die mooie verhalen verkopen. Wat ons onderscheidt: we zijn gecertificeerd, we werken met vaste prijzen en we zijn eerlijk — ook als de oplossing simpeler is dan je dacht. Onze klanten komen terug, dat zegt genoeg.`,
     },
     {
       question: "Wat is jullie werkgebied?",
       answer: city.werkgebied,
     },
     {
-      question: "Hoe snel kan een loodgieter bij mij thuis zijn?",
+      question: "Hoe snel zijn jullie ter plaatse?",
       answer:
-        `Bij spoedgevallen in ${city.name} streven wij ernaar binnen 1 uur ter plaatse te zijn. Voor reguliere afspraken plannen wij een tijdstip dat u uitkomt. Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00.`,
+        `Bij spoed proberen we binnen 1 uur bij je te zijn in ${city.name}. Voor regulier werk plannen we een afspraak die jou uitkomt. We zijn bereikbaar op werkdagen van 08:00 tot 17:00. Bel ons — we denken direct mee.`,
     },
     {
-      question: "Moet ik een loodgieter inschakelen voor periodiek onderhoud?",
+      question: "Is periodiek onderhoud echt nodig?",
       answer:
-        "Ja, periodiek onderhoud van uw water- en gasleidingen, verwarming en sanitair is sterk aan te raden. Regelmatig onderhoud voorkomt storingen, verlengt de levensduur van uw installaties en bespaart op de lange termijn kosten. Insta Monteur biedt onderhoudscontracten op maat.",
+        "Ja, en we zeggen dat niet om meer omzet te maken. Een ketel of leidingwerk dat regelmatig wordt nagekeken gaat langer mee, geeft minder storingen en voorkomt dure schade. We bieden onderhoudscontracten op maat — eerlijk geprijsd, zonder onnodige poespas.",
     },
   ];
 
+  const rotterdamFaqs = [
+    {
+      question: "In welke wijken van Rotterdam zijn jullie actief?",
+      answer:
+        "In heel Rotterdam — van Centrum tot Prins Alexander, van Delfshaven tot IJsselmonde. Ook Charlois, Kralingen, Feijenoord, Noord, Zuid en Overschie. En in de directe omgeving: Schiedam, Vlaardingen, Barendrecht, Capelle aan den IJssel, Ridderkerk en Spijkenisse. Twijfel je of we bij jou komen? Bel gewoon even, we vertellen het direct.",
+    },
+    {
+      question: "Waarom zou ik voor Insta Monteur kiezen?",
+      answer:
+        "Omdat we eerlijk zijn. We vertellen je vooraf wat het kost, sturen een gecertificeerde monteur en lossen het probleem écht op — niet half. We zijn jong, gedreven en hechten veel waarde aan kwaliteit en transparantie. Geen verborgen kosten, geen wollig gedoe. Gewoon goed werk.",
+    },
+    {
+      question: "Kunnen jullie ook helpen met een CV-ketel storing in Rotterdam?",
+      answer:
+        "Zeker. Naast loodgieterswerk doen we ook installatie, onderhoud en reparatie van CV-ketels in Rotterdam. We werken met alle merken: Remeha, Intergas, Nefit, Vaillant en meer. Geeft je ketel storing of wil je hem laten onderhouden? Bel ons.",
+    },
+  ];
+
+  const faqs = isRotterdam ? [...rotterdamFaqs, ...baseFaqs] : baseFaqs;
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Hero */}
       <section className="bg-white pt-[180px] pb-16 lg:pb-24 relative overflow-x-clip">
         <div
@@ -347,6 +418,107 @@ export default async function LoodgieterStadPage({
         </div>
       </section>
 
+      {/* Rotterdam wijken — alleen voor Rotterdam */}
+      {isRotterdam && city.wijken && (
+        <section className="bg-white py-20">
+          <div className="container mx-auto px-6 max-w-7xl">
+            <AnimateIn variant="fadeIn">
+              <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
+                Werkgebied
+              </span>
+            </AnimateIn>
+            <AnimateIn variant="fadeUp" delay={100}>
+              <h2
+                className="font-black text-brand mt-4 mb-4 leading-[0.9] tracking-tight"
+                style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
+              >
+                Loodgieter in alle wijken van Rotterdam
+              </h2>
+            </AnimateIn>
+            <AnimateIn variant="fadeUp" delay={160}>
+              <p className="text-muted-foreground text-base leading-relaxed max-w-2xl mb-10">
+                Van de Coolsingel tot Charlois, van Delfshaven tot Prins Alexander — wij zijn er.
+                Woont of werkt u in Rotterdam? Dan zijn wij uw loodgieter. Snel, vakkundig en
+                zonder gedoe. Staat uw wijk hieronder? Dan zijn we er zo.
+              </p>
+            </AnimateIn>
+            <AnimateIn variant="fadeUp" delay={220}>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                {city.wijken.map((wijk) => (
+                  <div
+                    key={wijk}
+                    className="flex items-center gap-2.5 p-3.5 border border-border rounded-xl hover:border-orange-200 hover:bg-orange-50/40 transition-all"
+                  >
+                    <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                    <span className="text-sm font-medium text-brand">{wijk}</span>
+                  </div>
+                ))}
+              </div>
+            </AnimateIn>
+          </div>
+        </section>
+      )}
+
+      {/* Diensten in Rotterdam — alleen voor Rotterdam */}
+      {isRotterdam && (
+        <section className="bg-[#f7f7f5] py-20">
+          <div className="container mx-auto px-6 max-w-7xl">
+            <AnimateIn variant="fadeIn">
+              <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
+                Onze diensten
+              </span>
+            </AnimateIn>
+            <AnimateIn variant="fadeUp" delay={100}>
+              <h2
+                className="font-black text-brand mt-4 mb-10 leading-[0.9] tracking-tight"
+                style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
+              >
+                Wat wij doen in Rotterdam
+              </h2>
+            </AnimateIn>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                {
+                  title: "Loodgieterswerk Rotterdam",
+                  desc: "Lekkages, sanitair, leidingen en rioolontstopping in heel Rotterdam.",
+                  href: "/loodgieter",
+                },
+                {
+                  title: "CV-ketel Rotterdam",
+                  desc: "Installatie, onderhoud en reparatie van CV-ketels in Rotterdam. Alle merken.",
+                  href: "/cv-ketels",
+                },
+                {
+                  title: "Warmtepomp Rotterdam",
+                  desc: "Duurzame warmtepompen installeren in Rotterdam. Gratis advies aan huis.",
+                  href: "/warmtepomp",
+                },
+                {
+                  title: "Spoed loodgieter Rotterdam",
+                  desc: "Acute lekkage of verstopte afvoer? Wij zijn er snel bij in Rotterdam.",
+                  href: "/spoed-loodgieter",
+                },
+              ].map((dienst, i) => (
+                <AnimateIn key={dienst.title} variant="fadeUp" delay={i * 80}>
+                  <Link
+                    href={dienst.href}
+                    className="block p-6 border border-border rounded-2xl bg-white hover:border-orange-200 hover:bg-orange-50/40 transition-all group h-full"
+                  >
+                    <h3 className="font-bold text-brand mb-2 group-hover:text-orange-500 transition-colors">
+                      {dienst.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-3">{dienst.desc}</p>
+                    <span className="text-orange-500 text-sm font-semibold inline-flex items-center gap-1">
+                      Meer informatie <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </Link>
+                </AnimateIn>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Reviews */}
       <section className="bg-white py-24">
         <div className="container mx-auto px-6 max-w-7xl">
@@ -360,7 +532,7 @@ export default async function LoodgieterStadPage({
               className="font-black text-brand mt-4 mb-12 leading-[0.9] tracking-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
             >
-              Wat onze klanten zeggen
+              Wat klanten in {city.name} zeggen
             </h2>
           </AnimateIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -374,7 +546,7 @@ export default async function LoodgieterStadPage({
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed flex-1">&ldquo;{review.text}&rdquo;</p>
                   <p className="font-bold text-brand text-sm mt-4">{review.name}</p>
-                  <p className="text-xs text-muted-foreground">Klant</p>
+                  <p className="text-xs text-muted-foreground">{isRotterdam ? review.location : city.name}</p>
                 </div>
               </AnimateIn>
             ))}
@@ -442,9 +614,9 @@ export default async function LoodgieterStadPage({
             <AnimateIn variant="fadeRight" delay={150}>
               <div className="flex flex-col gap-4">
                 <p className="text-white/80 text-lg leading-relaxed">
-                  Indien je met spoed een loodgieter nodig hebt in {city.name}, zal een ervaren spoed
-                  loodgieter binnen 1 uur op locatie zijn om het probleem vakkundig op te lossen.
-                  Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00.
+                  Heeft u een loodgieter nodig in {city.name}? Bel ons direct en een ervaren
+                  monteur staat binnen 1 uur op locatie om het probleem vakkundig op te lossen.
+                  Bereikbaar op werkdagen van 08:00 tot 17:00.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a

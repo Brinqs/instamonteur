@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}/loodgieter-${stad}`,
     lastModified: new Date(),
     changeFrequency: "weekly",
-    priority: 0.9,
+    priority: stad === "rotterdam" ? 1.0 : 0.8,
   }));
 
   return [
