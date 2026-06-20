@@ -22,11 +22,23 @@ const nextConfig: NextConfig = {
       "schiedam",
     ];
 
-    return steden.map((stad) => ({
-      source: `/loodgieter-${stad}`,
-      destination: `/steden/${stad}`,
-      permanent: true,
-    }));
+    return [
+      ...steden.map((stad) => ({
+        source: `/loodgieter-${stad}`,
+        destination: `/steden/${stad}`,
+        permanent: true,
+      })),
+      {
+        source: "/loodgieter-alphen-aan-den-rijn",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/loodgieter-noordwijk",
+        destination: "/",
+        permanent: true,
+      },
+    ];
   },
 };
 
