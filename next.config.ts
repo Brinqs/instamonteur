@@ -9,52 +9,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
-    const steden = [
-      "rotterdam",
-      "dordrecht",
-      "vlaardingen",
-      "delft",
-      "gouda",
-      "zoetermeer",
-      "leiden",
-      "den-haag",
-      "schiedam",
-    ];
-
-    return [
-      ...steden.map((stad) => ({
-        source: `/loodgieter-${stad}`,
-        destination: `/steden/${stad}`,
-        permanent: true,
-      })),
-      {
-        source: "/loodgieter-alphen-aan-den-rijn",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/loodgieter-noordwijk",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/diensten/cv-ketel",
-        destination: "/cv-ketels",
-        permanent: true,
-      },
-      {
-        source: "/diensten/loodgieter",
-        destination: "/loodgieter",
-        permanent: true,
-      },
-      {
-        source: "/diensten/warmtepomp-installatie",
-        destination: "/warmtepomp",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 export default nextConfig;

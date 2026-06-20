@@ -135,12 +135,12 @@ export async function generateMetadata({
     title: `Loodgieter ${city.name} | Insta Monteur`,
     description: `Betrouwbare loodgieter in ${city.name}. Insta Monteur is 24/7 bereikbaar voor spoed en regulier loodgieterswerk in ${city.name} en omgeving. Vaste tarieven, gratis offerte.`,
     alternates: {
-      canonical: `${siteConfig.url}/steden/${stad}`,
+      canonical: `${siteConfig.url}/loodgieter-${stad}`,
     },
   };
 }
 
-export default async function StadPage({
+export default async function LoodgieterStadPage({
   params,
 }: {
   params: Promise<{ stad: string }>;
@@ -408,7 +408,7 @@ export default async function StadPage({
                       <Star key={j} className="w-4 h-4 fill-orange-400 text-orange-400" />
                     ))}
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed flex-1">"{review.text}"</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1">&ldquo;{review.text}&rdquo;</p>
                   <p className="font-bold text-brand text-sm mt-4">{review.name}</p>
                   <p className="text-xs text-muted-foreground">Klant</p>
                 </div>

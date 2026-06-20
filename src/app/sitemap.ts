@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
 
   const stadenUrls: MetadataRoute.Sitemap = steden.map((stad) => ({
-    url: `${base}/steden/${stad}`,
+    url: `${base}/loodgieter-${stad}`,
     lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 0.9,
