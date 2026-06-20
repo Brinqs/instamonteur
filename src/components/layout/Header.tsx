@@ -82,9 +82,9 @@ export function Header() {
                 ))}
                 <span className="text-white/20">|</span>
                 {[
-                  { label: "Loodgieter", href: "/diensten/loodgieter" },
-                  { label: "Centrale verwarming", href: "/diensten/cv-ketel" },
-                  { label: "Warmtepomp", href: "/diensten/warmtepomp-installatie" },
+                  { label: "Loodgieter", href: "/loodgieter" },
+                  { label: "CV-ketels", href: "/cv-ketels" },
+                  { label: "Warmtepomp", href: "/warmtepomp" },
                 ].map((item) => (
                   <Link
                     key={item.href}
