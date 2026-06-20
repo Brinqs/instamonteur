@@ -7,14 +7,14 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: "Spoed Loodgieter | Snel ter Plaatse | Insta Monteur",
   description:
-    "Spoed loodgieter nodig in Zuid-Holland? Insta Monteur is snel ter plaatse voor lekkages, verstoppingen en wateroverlast. Bereikbaar op werkdagen van 08:00 tot 17:00.",
+    "Spoed loodgieter nodig in Rotterdam en omgeving? Insta Monteur is snel ter plaatse voor lekkages, verstoppingen en wateroverlast. Bereikbaar op werkdagen van 08:00 tot 17:00.",
   alternates: {
     canonical: `${siteConfig.url}/spoed-loodgieter`,
   },
 };
 
 const stats = [
-  { value: "20 min", label: "Responstijd" },
+  { value: "1 uur", label: "Responstijd" },
   { value: "Snel", label: "Ter plaatse" },
   { value: "9 steden", label: "Actief" },
   { value: "100%", label: "Gecertificeerd" },
@@ -23,13 +23,13 @@ const stats = [
 const cards = [
   {
     icon: Zap,
-    title: "Binnen 20 minuten",
-    description: "Wij zijn er snel bij in heel Zuid-Holland",
+    title: "Binnen 1 uur",
+    description: "Wij zijn er snel bij in Rotterdam en omgeving",
   },
   {
     icon: Clock,
     title: "Snel ter plaatse",
-    description: "Op werkdagen binnen 20 minuten bij u in Zuid-Holland",
+    description: "Op werkdagen binnen 1 uur bij u in Rotterdam en omgeving",
   },
   {
     icon: ShieldCheck,
@@ -47,7 +47,7 @@ const faqs = [
   {
     question: "Hoe snel zijn jullie ter plaatse bij een spoedgeval?",
     answer:
-      "Bij een waterlekkage of andere urgente situatie zijn wij doorgaans binnen 20 minuten bij u. Wij zijn actief in Rotterdam, Den Haag, Dordrecht, Delft, Leiden, Zoetermeer, Gouda, Schiedam en Vlaardingen en omgeving.",
+      "Bij een waterlekkage of andere urgente situatie zijn wij doorgaans binnen 1 uur bij u. Wij zijn actief in Rotterdam, Den Haag, Dordrecht, Delft, Leiden, Zoetermeer, Gouda, Schiedam en Vlaardingen en omgeving.",
   },
   {
     question: "Wanneer zijn jullie bereikbaar?",
@@ -67,7 +67,7 @@ const faqs = [
   {
     question: "In welke steden zijn jullie actief?",
     answer:
-      "Insta Monteur is actief in Rotterdam, Den Haag, Dordrecht, Delft, Leiden, Zoetermeer, Gouda, Schiedam, Vlaardingen en omliggende gebieden in Zuid-Holland.",
+      "Insta Monteur is actief in Rotterdam, Den Haag, Dordrecht, Delft, Leiden, Zoetermeer, Gouda, Schiedam, Vlaardingen en omliggende gebieden in Rotterdam en omgeving.",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function SpoedLoodgieterPage() {
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
               <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                Spoedservice · Binnen 20 min ter plaatse
+                Spoedservice · Binnen 1 uur ter plaatse
               </span>
             </div>
           </AnimateIn>
@@ -110,8 +110,8 @@ export default function SpoedLoodgieterPage() {
           <AnimateIn variant="fadeUp" delay={200}>
             <p className="text-foreground/50 text-base lg:text-lg max-w-lg leading-relaxed mb-8">
               Waterlekkage, verstopte afvoer of een andere acute loodgietersklus? Insta Monteur is
-              snel ter plaatse en staat binnen 20 minuten bij u in huis. Vakkundig en
-              betrouwbaar in heel Zuid-Holland.
+              snel ter plaatse en staat binnen 1 uur bij u in huis. Vakkundig en
+              betrouwbaar in Rotterdam en omgeving.
             </p>
           </AnimateIn>
 
@@ -136,7 +136,7 @@ export default function SpoedLoodgieterPage() {
 
           <AnimateIn variant="fadeUp" delay={380}>
             <div className="flex flex-wrap gap-x-8 gap-y-2 mt-8 pt-8 border-t border-border">
-              {["Snel ter plaatse", "Binnen 20 minuten ter plaatse", "Vaste tarieven ook bij spoed"].map((usp) => (
+              {["Snel ter plaatse", "Binnen 1 uur ter plaatse", "Vaste tarieven ook bij spoed"].map((usp) => (
                 <span key={usp} className="flex items-center gap-2 text-sm font-medium text-foreground/70">
                   <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
                   {usp}
@@ -211,7 +211,7 @@ export default function SpoedLoodgieterPage() {
               <AnimateIn variant="fadeUp" delay={200}>
                 <p className="text-muted-foreground text-base leading-relaxed max-w-md">
                   Een waterlekkage of verstopte afvoer kan in korte tijd grote schade aanrichten.
-                  Insta Monteur is de spoedloodgieter van Zuid-Holland: snel ter plaatse,
+                  Insta Monteur is de spoedloodgieter van Rotterdam: snel ter plaatse,
                   snel ter plaatse en altijd eerlijk over de kosten. Geen verrassingen achteraf.
                 </p>
               </AnimateIn>
@@ -311,14 +311,14 @@ export default function SpoedLoodgieterPage() {
               className="font-black text-brand mt-4 mb-6 leading-[0.9] tracking-tight"
               style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
             >
-              Actief in heel<br />Zuid-Holland
+              Actief in<br />Rotterdam en omgeving
             </h2>
           </AnimateIn>
           <AnimateIn variant="fadeUp" delay={180}>
             <p className="text-muted-foreground leading-relaxed text-base max-w-3xl mb-5">
               Insta Monteur biedt spoedservice in Rotterdam, Den Haag, Dordrecht, Delft,
               Leiden, Zoetermeer, Gouda, Schiedam en Vlaardingen. Dankzij onze strategische
-              ligging in de regio zijn wij doorgaans binnen 20 minuten bij u.
+              ligging in de regio zijn wij doorgaans binnen 1 uur bij u.
             </p>
           </AnimateIn>
           <AnimateIn variant="fadeUp" delay={240}>
@@ -399,7 +399,7 @@ export default function SpoedLoodgieterPage() {
             <AnimateIn variant="fadeRight" delay={150}>
               <div className="flex flex-col gap-4">
                 <p className="text-white/80 text-lg leading-relaxed">
-                  Bel direct of vraag een vrijblijvende offerte aan. Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00 en staan snel bij u in Zuid-Holland.
+                  Bel direct of vraag een vrijblijvende offerte aan. Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00 en staan snel bij u in Rotterdam en omgeving.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a

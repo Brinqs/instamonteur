@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: "CV-ketel Installatie & Onderhoud | Insta Monteur",
   description:
-    "Insta Monteur is uw specialist voor CV-ketel installatie, onderhoud en reparatie in Zuid-Holland. Professioneel, snel en met vaste tarieven.",
+    "Insta Monteur is uw specialist voor CV-ketel installatie, onderhoud en reparatie in Rotterdam en omgeving. Professioneel, snel en met vaste tarieven.",
   alternates: {
     canonical: `${siteConfig.url}/cv-ketels`,
   },
@@ -57,7 +57,7 @@ const faqs = [
   {
     question: "In welke regio zijn jullie actief?",
     answer:
-      "Insta Monteur is actief in geheel Zuid-Holland en de grote steden Rotterdam, Den Haag, Leiden, Gouda & Zoetermeer.",
+      "Insta Monteur is actief in regio Rotterdam en de grote steden Rotterdam, Den Haag, Leiden, Gouda & Zoetermeer.",
   },
   {
     question: "Wat zijn enkele veelvoorkomende problemen bij een cv-ketel?",
@@ -88,7 +88,7 @@ export default function CvKetelsPage() {
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
               <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                Regio Zuid-Holland · Ma–Vr 08:00–17:00
+                Rotterdam en omgeving · Ma–Vr 08:00–17:00
               </span>
             </div>
           </AnimateIn>
@@ -106,7 +106,7 @@ export default function CvKetelsPage() {
             <p className="text-foreground/50 text-base lg:text-lg max-w-lg leading-relaxed mb-8">
               Als u op zoek bent naar een ervaren loodgieter voor het plaatsen van een nieuwe
               CV-ketel of uitbreiding van uw CV-installatie, dan bent u bij Insta Monteur aan het
-              juiste adres. Actief in geheel Zuid-Holland.
+              juiste adres. Actief in regio Rotterdam.
             </p>
           </AnimateIn>
 
@@ -131,7 +131,7 @@ export default function CvKetelsPage() {
 
           <AnimateIn variant="fadeUp" delay={380}>
             <div className="flex flex-wrap gap-x-8 gap-y-2 mt-8 pt-8 border-t border-border">
-              {["Binnen 20 minuten ter plaatse", "Vaste tarieven", "Eerlijk en transparant"].map((usp) => (
+              {["Binnen 1 uur ter plaatse", "Vaste tarieven", "Eerlijk en transparant"].map((usp) => (
                 <span key={usp} className="flex items-center gap-2 text-sm font-medium text-foreground/70">
                   <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
                   {usp}

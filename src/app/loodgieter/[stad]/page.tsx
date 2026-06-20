@@ -20,7 +20,7 @@ const cities: Record<string, CityData> = {
     about:
       "Bij Insta Monteur in Rotterdam bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Van lekkages opsporen en verhelpen tot het ontstoppen van afvoeren, het plaatsen van sanitair en het aanleggen van leidingen — wij staan voor u klaar.",
     werkgebied:
-      "Wij zijn actief in Rotterdam en omstreken, waaronder Barendrecht, Spijkenisse, Schiedam, Capelle aan den IJssel, Ridderkerk en geheel Zuid-Holland.",
+      "Wij zijn actief in Rotterdam en omstreken, waaronder Barendrecht, Spijkenisse, Schiedam, Capelle aan den IJssel, Ridderkerk en regio Rotterdam.",
   },
   dordrecht: {
     name: "Dordrecht",
@@ -29,7 +29,7 @@ const cities: Record<string, CityData> = {
     about:
       "Bij Insta Monteur in Dordrecht bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Van lekkages opsporen en verhelpen tot het ontstoppen van afvoeren en het aanleggen van leidingen — wij leveren kwaliteit met garantie.",
     werkgebied:
-      "Wij zijn actief in Dordrecht en omstreken, waaronder Papendrecht, Zwijndrecht, Sliedrecht en geheel Zuid-Holland.",
+      "Wij zijn actief in Dordrecht en omstreken, waaronder Papendrecht, Zwijndrecht, Sliedrecht en regio Rotterdam.",
   },
   vlaardingen: {
     name: "Vlaardingen",
@@ -38,7 +38,7 @@ const cities: Record<string, CityData> = {
     about:
       "Bij Insta Monteur in Vlaardingen bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Of het nu gaat om een lekkage, een verstopte afvoer of nieuw sanitair — wij zorgen voor een snelle en nette oplossing.",
     werkgebied:
-      "Wij zijn actief in Vlaardingen en omstreken, waaronder Schiedam, Maassluis, Hoek van Holland en geheel Zuid-Holland.",
+      "Wij zijn actief in Vlaardingen en omstreken, waaronder Schiedam, Maassluis, Hoek van Holland en regio Rotterdam.",
   },
   delft: {
     name: "Delft",
@@ -47,7 +47,7 @@ const cities: Record<string, CityData> = {
     about:
       "Bij Insta Monteur in Delft bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Van spoedklussen tot geplande installaties, onze monteurs in Delft werken netjes, vakkundig en klantgericht.",
     werkgebied:
-      "Wij zijn actief in Delft en omstreken, waaronder Den Haag, Zoetermeer, Pijnacker-Nootdorp en geheel Zuid-Holland.",
+      "Wij zijn actief in Delft en omstreken, waaronder Den Haag, Zoetermeer, Pijnacker-Nootdorp en regio Rotterdam.",
   },
   gouda: {
     name: "Gouda",
@@ -56,16 +56,16 @@ const cities: Record<string, CityData> = {
     about:
       "Bij Insta Monteur in Gouda bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Of het nu gaat om een lekkage, verstopte afvoer of complete installatie — onze monteurs in Gouda staan voor u klaar.",
     werkgebied:
-      "Wij zijn actief in Gouda en omstreken, waaronder Bodegraven, Waddinxveen, Alphen aan den Rijn en geheel Zuid-Holland.",
+      "Wij zijn actief in Gouda en omstreken, waaronder Bodegraven, Waddinxveen, Alphen aan den Rijn en regio Rotterdam.",
   },
   zoetermeer: {
     name: "Zoetermeer",
     intro:
-      "Zoekt u een vakkundige loodgieter in Zoetermeer? Insta Monteur levert snelle en betrouwbare service in Zoetermeer. Onze ervaren monteurs zijn uitgerust met de nieuwste apparatuur en binnen 20 minuten ter plaatse.",
+      "Zoekt u een vakkundige loodgieter in Zoetermeer? Insta Monteur levert snelle en betrouwbare service in Zoetermeer. Onze ervaren monteurs zijn uitgerust met de nieuwste apparatuur en binnen 1 uur ter plaatse.",
     about:
       "Bij Insta Monteur in Zoetermeer bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Van lekkage tot nieuw sanitair — wij bieden kwalitatief loodgieterswerk in Zoetermeer met garantie.",
     werkgebied:
-      "Wij zijn actief in Zoetermeer en omstreken, waaronder Den Haag, Delft, Pijnacker-Nootdorp en geheel Zuid-Holland.",
+      "Wij zijn actief in Zoetermeer en omstreken, waaronder Den Haag, Delft, Pijnacker-Nootdorp en regio Rotterdam.",
   },
   leiden: {
     name: "Leiden",
@@ -74,7 +74,7 @@ const cities: Record<string, CityData> = {
     about:
       "Bij Insta Monteur in Leiden bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Of u nu een lekkage heeft, een afvoer wilt laten ontstoppen of sanitair wilt laten plaatsen — wij zijn er voor u.",
     werkgebied:
-      "Wij zijn actief in Leiden en omstreken, waaronder Leiderdorp, Zoeterwoude, Alphen aan den Rijn en geheel Zuid-Holland.",
+      "Wij zijn actief in Leiden en omstreken, waaronder Leiderdorp, Zoeterwoude, Alphen aan den Rijn en regio Rotterdam.",
   },
   "den-haag": {
     name: "Den Haag",
@@ -83,7 +83,7 @@ const cities: Record<string, CityData> = {
     about:
       "Bij Insta Monteur in Den Haag bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Van spoed lekkagereparaties tot het aanleggen van nieuwe leidingen — onze monteurs in Den Haag leveren kwaliteit.",
     werkgebied:
-      "Wij zijn actief in Den Haag en omstreken, waaronder Delft, Zoetermeer, Rijswijk, Wateringen en geheel Zuid-Holland.",
+      "Wij zijn actief in Den Haag en omstreken, waaronder Delft, Zoetermeer, Rijswijk, Wateringen en regio Rotterdam.",
   },
   schiedam: {
     name: "Schiedam",
@@ -92,12 +92,12 @@ const cities: Record<string, CityData> = {
     about:
       "Bij Insta Monteur in Schiedam bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Of het nu gaat om een lekkage, verstopte afvoer of nieuw sanitair — wij lossen het vakkundig op.",
     werkgebied:
-      "Wij zijn actief in Schiedam en omstreken, waaronder Rotterdam, Vlaardingen, Maassluis en geheel Zuid-Holland.",
+      "Wij zijn actief in Schiedam en omstreken, waaronder Rotterdam, Vlaardingen, Maassluis en regio Rotterdam.",
   },
 };
 
 const stats = [
-  { value: "20 min", label: "Reactietijd" },
+  { value: "1 uur", label: "Reactietijd" },
   { value: "Snel", label: "Ter plaatse" },
   { value: "500+", label: "Klanten" },
   { value: "100%", label: "Gecertificeerd" },
@@ -107,7 +107,7 @@ const usps = [
   { title: "Vakkundig & Professioneel", desc: "Gecertificeerde monteurs met jarenlange ervaring" },
   { title: "Duidelijke & Heldere Afspraken", desc: "Wij communiceren helder over planning en kosten" },
   { title: "Vaste Tarieven", desc: "Geen verborgen kosten, altijd transparant" },
-  { title: "Werkzaam in Zuid-Holland", desc: "Snel ter plaatse in de hele regio" },
+  { title: "Werkzaam in Rotterdam en omgeving", desc: "Snel ter plaatse in de hele regio" },
   { title: "Deskundig Advies", desc: "Eerlijk advies op maat, gratis en vrijblijvend" },
   { title: "Gratis Offerte", desc: "Vrijblijvende offerte binnen 24 uur" },
 ];
@@ -167,7 +167,7 @@ export default async function LoodgieterStadPage({
     {
       question: "Hoe snel kan een loodgieter bij mij thuis zijn?",
       answer:
-        `Bij spoedgevallen in ${city.name} streven wij ernaar binnen 20 minuten ter plaatse te zijn. Voor reguliere afspraken plannen wij een tijdstip dat u uitkomt. Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00.`,
+        `Bij spoedgevallen in ${city.name} streven wij ernaar binnen 1 uur ter plaatse te zijn. Voor reguliere afspraken plannen wij een tijdstip dat u uitkomt. Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00.`,
     },
     {
       question: "Moet ik een loodgieter inschakelen voor periodiek onderhoud?",
@@ -197,7 +197,7 @@ export default async function LoodgieterStadPage({
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
               <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                Regio Zuid-Holland · Ma–Vr 08:00–17:00
+                Rotterdam en omgeving · Ma–Vr 08:00–17:00
               </span>
             </div>
           </AnimateIn>
@@ -238,7 +238,7 @@ export default async function LoodgieterStadPage({
 
           <AnimateIn variant="fadeUp" delay={380}>
             <div className="flex flex-wrap gap-x-8 gap-y-2 mt-8 pt-8 border-t border-border">
-              {["Binnen 20 minuten ter plaatse", "Vaste tarieven", "Eerlijk en transparant"].map((usp) => (
+              {["Binnen 1 uur ter plaatse", "Vaste tarieven", "Eerlijk en transparant"].map((usp) => (
                 <span key={usp} className="flex items-center gap-2 text-sm font-medium text-foreground/70">
                   <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
                   {usp}
@@ -363,7 +363,7 @@ export default async function LoodgieterStadPage({
                 { icon: Wrench, title: "Leidingen aanleggen", desc: "Netjes, lekvrij en veilig aangelegd" },
                 { icon: Droplets, title: "Lekkage verhelpen", desc: "Snel opsporen en adequaat oplossen" },
                 { icon: Waves, title: "Afvoer ontstoppen", desc: "Hogedruk en camera-inspectie" },
-                { icon: ShieldCheck, title: "Spoedservice", desc: "Binnen 20 minuten ter plaatse" },
+                { icon: ShieldCheck, title: "Spoedservice", desc: "Binnen 1 uur ter plaatse" },
               ].map((card, i) => {
                 const Icon = card.icon;
                 return (
@@ -479,7 +479,7 @@ export default async function LoodgieterStadPage({
               <div className="flex flex-col gap-4">
                 <p className="text-white/80 text-lg leading-relaxed">
                   Indien je met spoed een loodgieter nodig hebt in {city.name}, zal een ervaren spoed
-                  loodgieter binnen 20 minuten op locatie zijn om het probleem vakkundig op te lossen.
+                  loodgieter binnen 1 uur op locatie zijn om het probleem vakkundig op te lossen.
                   Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">

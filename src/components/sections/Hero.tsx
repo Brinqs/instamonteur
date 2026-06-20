@@ -37,7 +37,7 @@ export function Hero() {
             <div className="flex items-center gap-3 mb-8 lg:mb-6">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
               <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                Zuid-Holland · Ma–Vr 08:00–17:00
+                Rotterdam · Ma–Vr 08:00–17:00
               </span>
             </div>
 
@@ -56,7 +56,7 @@ export function Hero() {
                 <Letters text="MONTEUR" baseDelay={680} className="text-orange-500" style={{ fontSize: "clamp(3.5rem, 7.8vw, 6.4rem)" }} />
               </span>
               <span className="block">
-                <Letters text="IN ZUID-HOLLAND" baseDelay={900} className="text-foreground/40" style={{ fontSize: "clamp(1.7rem, 3.2vw, 2.5rem)", letterSpacing: "0.05em" }} />
+                <Letters text="IN ROTTERDAM" baseDelay={900} className="text-foreground/40" style={{ fontSize: "clamp(1.7rem, 3.2vw, 2.5rem)", letterSpacing: "0.05em" }} />
               </span>
             </h1>
 
@@ -83,7 +83,7 @@ export function Hero() {
             </div>
 
             <div className="flex flex-wrap gap-x-8 gap-y-2 mt-8 pt-8 lg:mt-10 lg:pt-10 border-t border-border">
-              {["Binnen 20 minuten ter plaatse", "Vaste tarieven", "Eerlijk en transparant"].map((usp) => (
+              {["Binnen 1 uur ter plaatse", "Vaste tarieven", "Eerlijk en transparant"].map((usp) => (
                 <span key={usp} className="flex items-center gap-2 text-sm font-medium text-foreground/70">
                   <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
                   {usp}
@@ -105,7 +105,7 @@ export function Hero() {
               />
             </div>
             <div className="absolute top-28 left-20 z-20 bg-white rounded-2xl shadow-xl px-5 py-4 border border-border">
-              <div className="text-3xl font-black text-brand tracking-tight">20 min</div>
+              <div className="text-3xl font-black text-brand tracking-tight">1 uur</div>
               <div className="text-xs text-muted-foreground font-medium mt-0.5">Gemiddelde responstijd</div>
             </div>
             <div className="absolute bottom-24 -left-8 z-20 bg-white rounded-2xl shadow-xl px-4 py-3 border border-border">

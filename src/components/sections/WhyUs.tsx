@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { AnimateIn } from "@/components/AnimateIn";
 
 const stats = [
-  { value: "20 min", label: "Gemiddelde responstijd" },
+  { value: "1 uur", label: "Gemiddelde responstijd" },
   { value: "Gratis", label: "Vrijblijvende offerte" },
   { value: "500+", label: "Tevreden klanten" },
   { value: "100%", label: "Vakkundig gecertificeerd" },
@@ -14,7 +14,7 @@ const reasons = [
   { icon: Award, title: "Vakkundig & professioneel", description: "Alle monteurs zijn gecertificeerd en werken volgens de hoogste standaarden." },
   { icon: MessageSquare, title: "Heldere afspraken", description: "Eerlijke communicatie. Wat wij afspreken, dat doen wij ook." },
   { icon: Clock, title: "Snel ter plaatse", description: "Bij spoed zijn wij razendsnel bij u. Bereikbaar op werkdagen." },
-  { icon: MapPin, title: "Heel Zuid-Holland", description: "Rotterdam, Den Haag, Leiden, Gouda, Dordrecht, Delft, Schiedam en omgeving." },
+  { icon: MapPin, title: "Rotterdam & omgeving", description: "Rotterdam, Den Haag, Leiden, Gouda, Dordrecht, Delft, Schiedam en omgeving." },
   { icon: Shield, title: "Kwaliteitsgarantie", description: "Op al ons werk geven wij garantie. Niet tevreden? Wij lossen het op." },
 ];
 
@@ -86,7 +86,7 @@ export function WhyUs() {
                 </AnimateIn>
                 <AnimateIn variant="fadeUp" delay={200}>
                   <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-                    In geheel Zuid-Holland staan wij klaar voor u. Van een kleine reparatie
+                    In regio Rotterdam staan wij klaar voor u. Van een kleine reparatie
                     tot een complete installatie, wij leveren kwaliteit met garantie.
                   </p>
                 </AnimateIn>

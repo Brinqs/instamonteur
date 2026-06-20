@@ -38,7 +38,7 @@ const services = [
     icon: Wrench,
     title: "Warmtepomp",
     description:
-      "Duurzaam verwarmen met een warmtepomp. Wij installeren lucht/water en hybride warmtepompen in geheel Zuid-Holland.",
+      "Duurzaam verwarmen met een warmtepomp. Wij installeren lucht/water en hybride warmtepompen in regio Rotterdam.",
     features: ["Lucht/water warmtepomp", "Hybride systemen", "Periodiek onderhoud", "Gratis advies"],
     href: "/warmtepomp",
     badge: null,
@@ -47,8 +47,8 @@ const services = [
     icon: Clock,
     title: "Spoed loodgieter",
     description:
-      "Lekkage of storing? Wij zijn snel ter plaatse. Onze spoedmonteurs zijn binnen 20 minuten bij u in Zuid-Holland.",
-    features: ["Snel ter plaatse", "Binnen 20 min ter plaatse", "Bereikbaar op werkdagen", "Vaste tarieven"],
+      "Lekkage of storing? Wij zijn snel ter plaatse. Onze spoedmonteurs zijn binnen 1 uur bij u in Rotterdam en omgeving.",
+    features: ["Snel ter plaatse", "Binnen 1 uur ter plaatse", "Bereikbaar op werkdagen", "Vaste tarieven"],
     href: "/spoed-loodgieter",
     badge: "Snel",
   },

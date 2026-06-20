@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: "Warmtepomp Installatie & Onderhoud | Insta Monteur",
   description:
-    "Insta Monteur is uw specialist voor warmtepomp installatie en onderhoud in Zuid-Holland. Duurzaam, professioneel en met vaste tarieven.",
+    "Insta Monteur is uw specialist voor warmtepomp installatie en onderhoud in Rotterdam en omgeving. Duurzaam, professioneel en met vaste tarieven.",
   alternates: {
     canonical: `${siteConfig.url}/warmtepomp`,
   },
@@ -88,7 +88,7 @@ export default function WarmtepompPage() {
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
               <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                Regio Zuid-Holland · Ma–Vr 08:00–17:00
+                Rotterdam en omgeving · Ma–Vr 08:00–17:00
               </span>
             </div>
           </AnimateIn>
@@ -131,7 +131,7 @@ export default function WarmtepompPage() {
 
           <AnimateIn variant="fadeUp" delay={380}>
             <div className="flex flex-wrap gap-x-8 gap-y-2 mt-8 pt-8 border-t border-border">
-              {["Binnen 20 minuten ter plaatse", "Vaste tarieven", "Eerlijk en transparant"].map((usp) => (
+              {["Binnen 1 uur ter plaatse", "Vaste tarieven", "Eerlijk en transparant"].map((usp) => (
                 <span key={usp} className="flex items-center gap-2 text-sm font-medium text-foreground/70">
                   <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
                   {usp}
@@ -205,11 +205,11 @@ export default function WarmtepompPage() {
               </AnimateIn>
               <AnimateIn variant="fadeUp" delay={200}>
                 <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-                  Wij zijn een installatiebedrijf in Regio Zuid-Holland dat zich actief richt op
+                  Wij zijn een installatiebedrijf in Rotterdam en omgeving dat zich actief richt op
                   duurzame ontwikkelingen binnen ons vakgebied. Als allround installatiebedrijf
                   willen wij bijdragen aan het verduurzamen van huizen en bedrijven door het
                   aanbieden van warmtepompen en andere duurzame oplossingen. Onze installateurs zijn
-                  werkzaam in de regio Zuid-Holland en ons werkgebied strekt zich uit tot Rotterdam,
+                  werkzaam in de regio Rotterdam en ons werkgebied strekt zich uit tot Rotterdam,
                   Den Haag, Leiden, Gouda &amp; Zoetermeer.
                 </p>
               </AnimateIn>

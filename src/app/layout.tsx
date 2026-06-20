@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "loodgieter Den Haag",
     "CV ketel installatie",
     "warmtepomp installatie",
-    "loodgieter Zuid-Holland",
+    "loodgieter Rotterdam",
     "installatiebedrijf",
     "spoed",
     "lekkage",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} – ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: [{ url: "/hero-branded-1781454861749.png", width: 1200, height: 630, alt: "Insta Monteur – Loodgieter Zuid-Holland" }],
+    images: [{ url: "/hero-branded-1781454861749.png", width: 1200, height: 630, alt: "Insta Monteur – Loodgieter Rotterdam" }],
   },
   twitter: {
     card: "summary_large_image",

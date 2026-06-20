@@ -14,7 +14,7 @@ const faqs = [
   {
     question: "Hoe snel kan een loodgieter bij mij zijn?",
     answer:
-      "Bij een spoedsituatie zijn wij gemiddeld binnen 20 minuten bij u. Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00. Bel ons en wij sturen direct een monteur.",
+      "Bij een spoedsituatie zijn wij gemiddeld binnen 1 uur bij u. Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00. Bel ons en wij sturen direct een monteur.",
   },
   {
     question: "Wat moet ik doen bij een lekkage thuis?",
@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "In welke steden zijn jullie actief?",
     answer:
-      "Wij zijn actief in heel Zuid-Holland, waaronder Rotterdam, Dordrecht, Delft, Zoetermeer, Vlaardingen en Schiedam. Twijfelt u of wij bij u in de buurt komen? Bel ons en wij vertellen het u direct.",
+      "Wij zijn actief in Rotterdam en omgeving, waaronder Rotterdam, Dordrecht, Delft, Zoetermeer, Vlaardingen en Schiedam. Twijfelt u of wij bij u in de buurt komen? Bel ons en wij vertellen het u direct.",
   },
   {
     question: "Hebben jullie garantie op het werk?",

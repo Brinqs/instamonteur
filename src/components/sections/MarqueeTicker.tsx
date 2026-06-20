@@ -6,7 +6,7 @@ const items = [
   "Sanitair montage",
   "Dakgoot reparatie",
   "Zonnepanelen",
-  "Binnen 20 minuten",
+  "Binnen 1 uur",
   "Snelle service",
   "Vaste tarieven",
 ];
