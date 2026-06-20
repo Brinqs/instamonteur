@@ -38,6 +38,21 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/diensten/cv-ketel",
+        destination: "/cv-ketels",
+        permanent: true,
+      },
+      {
+        source: "/diensten/loodgieter",
+        destination: "/loodgieter",
+        permanent: true,
+      },
+      {
+        source: "/diensten/warmtepomp-installatie",
+        destination: "/warmtepomp",
+        permanent: true,
+      },
     ];
   },
 };
