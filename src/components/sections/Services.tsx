@@ -5,7 +5,7 @@ import { AnimateIn } from "@/components/AnimateIn";
 const services = [
   {
     title: "Spoed loodgieter",
-    description: "Directe service bij storingen en lekkages. Dag en nacht, 7 dagen per week.",
+    description: "Directe service bij storingen en lekkages. Snel ter plaatse op werkdagen.",
     href: "/contact",
   },
   {

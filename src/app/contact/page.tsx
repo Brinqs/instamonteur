@@ -193,8 +193,8 @@ export default function ContactPage() {
                   <span className="font-bold text-orange-700">Spoedgeval? Bel direct!</span>
                 </div>
                 <p className="text-orange-700/80 text-sm mb-4">
-                  Bij storingen en lekkages zijn wij 24/7 bereikbaar. Wij zijn er wanneer u ons
-                  nodig heeft, ook in het weekend en op feestdagen.
+                  Bij storingen en lekkages zijn wij snel ter plaatse. Bereikbaar op werkdagen
+                  van 08:00 tot 17:00.
                 </p>
                 <a
                   href={`tel:${siteConfig.phone.replace(/\s|-/g, "")}`}

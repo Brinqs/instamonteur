@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: "Loodgieter Regio Zuid-Holland | Insta Monteur",
   description:
-    "Insta Monteur is uw betrouwbare loodgieter in Zuid-Holland. Spoed, lekkage, leidingen en meer. Ma t/m Zo 24/7 bereikbaar.",
+    "Insta Monteur is uw betrouwbare loodgieter in Zuid-Holland. Spoed, lekkage, leidingen en meer. bereikbaar op werkdagen van 08:00 tot 17:00.",
   alternates: {
     canonical: `${siteConfig.url}/loodgieter`,
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const stats = [
   { value: "20 min", label: "Reactietijd" },
-  { value: "24/7", label: "Bereikbaar" },
+  { value: "Snel", label: "Ter plaatse" },
   { value: "500+", label: "Klanten" },
   { value: "100%", label: "Gecertificeerd" },
 ];
@@ -88,7 +88,7 @@ export default function LoodgieterPage() {
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
               <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                Regio Zuid-Holland · Ma–Zo 24/7
+                Regio Zuid-Holland · Ma–Vr 08:00–17:00
               </span>
             </div>
           </AnimateIn>
@@ -373,7 +373,7 @@ export default function LoodgieterPage() {
             className="font-black text-orange-400/30 whitespace-nowrap leading-none"
             style={{ fontSize: "clamp(14rem, 40vw, 32rem)", letterSpacing: "-0.05em" }}
           >
-            24/7
+            SNEL
           </span>
         </div>
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -392,7 +392,7 @@ export default function LoodgieterPage() {
                 <p className="text-white/80 text-lg leading-relaxed">
                   Indien je met spoed een loodgieter nodig hebt, zal een ervaren spoed loodgieter
                   binnen 20 minuten op locatie zijn om het probleem vakkundig op te lossen. Wij zijn
-                  Ma t/m Zo 24/7 bereikbaar.
+                  bereikbaar op werkdagen van 08:00 tot 17:00.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a

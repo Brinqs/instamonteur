@@ -15,7 +15,7 @@ export function CTA() {
           className="font-black text-orange-400/30 whitespace-nowrap leading-none"
           style={{ fontSize: "clamp(14rem, 40vw, 32rem)", letterSpacing: "-0.05em" }}
         >
-          24/7
+          SNEL
         </span>
       </div>
 
@@ -34,8 +34,7 @@ export function CTA() {
           <AnimateIn variant="fadeRight" delay={150}>
           <div className="flex flex-col gap-4">
             <p className="text-white/80 text-lg leading-relaxed">
-              Wij zijn Ma t/m Zo 24/7 bereikbaar. Neem vandaag nog contact op
-              en wij staan binnen 20 minuten bij u.
+              Wij zijn bereikbaar van maandag t/m vrijdag van 08:00 tot 17:00. Neem vandaag nog contact op en wij staan snel bij u.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a

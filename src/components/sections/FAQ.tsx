@@ -14,7 +14,7 @@ const faqs = [
   {
     question: "Hoe snel kan een loodgieter bij mij zijn?",
     answer:
-      "Bij een spoedsituatie zijn wij gemiddeld binnen 20 minuten bij u. Wij zijn 24/7 bereikbaar, ook in het weekend en op feestdagen. Bel ons en wij sturen direct een monteur.",
+      "Bij een spoedsituatie zijn wij gemiddeld binnen 20 minuten bij u. Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00. Bel ons en wij sturen direct een monteur.",
   },
   {
     question: "Wat moet ik doen bij een lekkage thuis?",

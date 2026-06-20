@@ -37,7 +37,7 @@ export function Hero() {
             <div className="flex items-center gap-3 mb-8 lg:mb-6">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
               <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                Zuid-Holland · Ma–Zo 24/7
+                Zuid-Holland · Ma–Vr 08:00–17:00
               </span>
             </div>
 

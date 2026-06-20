@@ -7,7 +7,7 @@ const services = [
   { label: "Loodgieter", href: "/loodgieter" },
   { label: "CV-ketel installatie", href: "/cv-ketels" },
   { label: "Warmtepomp", href: "/warmtepomp" },
-  { label: "Spoed loodgieter 24/7", href: "/spoed-loodgieter" },
+  { label: "Spoed loodgieter", href: "/spoed-loodgieter" },
 ];
 
 const cities = [

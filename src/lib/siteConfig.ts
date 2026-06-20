@@ -17,7 +17,7 @@ export const siteConfig = {
     instagram: "https://instagram.com/instamonteur",
     linkedin: "https://linkedin.com/company/instamonteur",
   },
-  openingHours: "Ma t/m Zo: 24/7",
+  openingHours: "Ma t/m Vr: 08:00 – 17:00",
 };
 
 export const navigation = [

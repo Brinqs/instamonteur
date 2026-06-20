@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: "Onze Diensten",
   description:
-    "Bekijk alle installatiedienstens van InstaMonteur: CV-ketel, elektra, loodgieterswerk, airconditioning, ventilatie en 24/7 spoedservice.",
+    "Bekijk alle installatiediensten van InstaMonteur: CV-ketel, elektra, loodgieterswerk, airconditioning, ventilatie en spoedservice.",
   alternates: {
     canonical: `${siteConfig.url}/diensten`,
   },
@@ -45,12 +45,12 @@ const services = [
   },
   {
     icon: Clock,
-    title: "Spoed loodgieter 24/7",
+    title: "Spoed loodgieter",
     description:
-      "Lekkage of storing? Dag en nacht bereikbaar. Onze spoedmonteurs zijn binnen 20 minuten bij u in Zuid-Holland.",
-    features: ["Dag & nacht bereikbaar", "Binnen 20 min ter plaatse", "Weekenden & feestdagen", "Vaste tarieven"],
+      "Lekkage of storing? Wij zijn snel ter plaatse. Onze spoedmonteurs zijn binnen 20 minuten bij u in Zuid-Holland.",
+    features: ["Snel ter plaatse", "Binnen 20 min ter plaatse", "Bereikbaar op werkdagen", "Vaste tarieven"],
     href: "/spoed-loodgieter",
-    badge: "24/7",
+    badge: "Snel",
   },
 ];
 

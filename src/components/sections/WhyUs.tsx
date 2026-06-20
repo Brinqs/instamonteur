@@ -4,7 +4,7 @@ import { AnimateIn } from "@/components/AnimateIn";
 
 const stats = [
   { value: "20 min", label: "Gemiddelde responstijd" },
-  { value: "24/7", label: "Ma t/m Zo bereikbaar" },
+  { value: "Gratis", label: "Vrijblijvende offerte" },
   { value: "500+", label: "Tevreden klanten" },
   { value: "100%", label: "Vakkundig gecertificeerd" },
 ];
@@ -13,7 +13,7 @@ const reasons = [
   { icon: Banknote, title: "Vaste tarieven", description: "Geen verborgen kosten. U weet van tevoren precies wat u betaalt." },
   { icon: Award, title: "Vakkundig & professioneel", description: "Alle monteurs zijn gecertificeerd en werken volgens de hoogste standaarden." },
   { icon: MessageSquare, title: "Heldere afspraken", description: "Eerlijke communicatie. Wat wij afspreken, dat doen wij ook." },
-  { icon: Clock, title: "Binnen 20 minuten", description: "Bij spoed zijn wij razendsnel bij u. Dag en nacht beschikbaar." },
+  { icon: Clock, title: "Snel ter plaatse", description: "Bij spoed zijn wij razendsnel bij u. Bereikbaar op werkdagen." },
   { icon: MapPin, title: "Heel Zuid-Holland", description: "Rotterdam, Den Haag, Leiden, Gouda, Dordrecht, Delft, Schiedam en omgeving." },
   { icon: Shield, title: "Kwaliteitsgarantie", description: "Op al ons werk geven wij garantie. Niet tevreden? Wij lossen het op." },
 ];

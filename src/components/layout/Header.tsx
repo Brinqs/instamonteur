@@ -40,7 +40,7 @@ export function Header() {
                 />
               </Link>
               <div className="hidden lg:flex items-center gap-4">
-                <span className="text-sm text-muted-foreground font-medium">Ma–Zo 24/7</span>
+                <span className="text-sm text-muted-foreground font-medium">Ma–Vr 08:00–17:00</span>
                 <a
                   href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
                   className="inline-flex items-center gap-2 bg-brand text-white font-bold px-5 py-2.5 rounded-full text-sm hover:bg-orange-500 transition-colors"

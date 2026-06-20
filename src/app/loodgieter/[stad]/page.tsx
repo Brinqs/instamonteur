@@ -25,7 +25,7 @@ const cities: Record<string, CityData> = {
   dordrecht: {
     name: "Dordrecht",
     intro:
-      "Op zoek naar een betrouwbare loodgieter in Dordrecht? Bij Insta Monteur bent u aan het juiste adres. Onze ervaren loodgieters in Dordrecht staan 24/7 voor u klaar voor zowel spoed als reguliere klussen.",
+      "Op zoek naar een betrouwbare loodgieter in Dordrecht? Bij Insta Monteur bent u aan het juiste adres. Onze ervaren loodgieters in Dordrecht zijn snel bij u voor zowel spoed als reguliere klussen.",
     about:
       "Bij Insta Monteur in Dordrecht bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Van lekkages opsporen en verhelpen tot het ontstoppen van afvoeren en het aanleggen van leidingen — wij leveren kwaliteit met garantie.",
     werkgebied:
@@ -34,7 +34,7 @@ const cities: Record<string, CityData> = {
   vlaardingen: {
     name: "Vlaardingen",
     intro:
-      "Zoekt u een betrouwbare loodgieter in Vlaardingen? Insta Monteur staat dag en nacht voor u klaar. Onze vakkundige loodgieters in Vlaardingen lossen elk sanitair probleem snel en professioneel op.",
+      "Zoekt u een betrouwbare loodgieter in Vlaardingen? Insta Monteur staat snel voor u klaar. Onze vakkundige loodgieters in Vlaardingen lossen elk sanitair probleem snel en professioneel op.",
     about:
       "Bij Insta Monteur in Vlaardingen bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Of het nu gaat om een lekkage, een verstopte afvoer of nieuw sanitair — wij zorgen voor een snelle en nette oplossing.",
     werkgebied:
@@ -52,7 +52,7 @@ const cities: Record<string, CityData> = {
   gouda: {
     name: "Gouda",
     intro:
-      "Op zoek naar een loodgieter in Gouda? Bij Insta Monteur bent u aan het juiste adres. Wij bieden betrouwbare loodgietersdiensten in Gouda en omgeving, 24/7 bereikbaar voor spoed en regulier werk.",
+      "Op zoek naar een loodgieter in Gouda? Bij Insta Monteur bent u aan het juiste adres. Wij bieden betrouwbare loodgietersdiensten in Gouda en omgeving, snel bereikbaar voor spoed en regulier werk.",
     about:
       "Bij Insta Monteur in Gouda bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Of het nu gaat om een lekkage, verstopte afvoer of complete installatie — onze monteurs in Gouda staan voor u klaar.",
     werkgebied:
@@ -70,7 +70,7 @@ const cities: Record<string, CityData> = {
   leiden: {
     name: "Leiden",
     intro:
-      "Op zoek naar een betrouwbare loodgieter in Leiden? Insta Monteur staat 24/7 voor u klaar. Onze loodgieters in Leiden werken snel, vakkundig en altijd met vaste tarieven zonder verborgen kosten.",
+      "Op zoek naar een betrouwbare loodgieter in Leiden? Insta Monteur is snel bij u. Onze loodgieters in Leiden werken snel, vakkundig en altijd met vaste tarieven zonder verborgen kosten.",
     about:
       "Bij Insta Monteur in Leiden bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Of u nu een lekkage heeft, een afvoer wilt laten ontstoppen of sanitair wilt laten plaatsen — wij zijn er voor u.",
     werkgebied:
@@ -79,7 +79,7 @@ const cities: Record<string, CityData> = {
   "den-haag": {
     name: "Den Haag",
     intro:
-      "Bent u op zoek naar een betrouwbare loodgieter in Den Haag? Bij Insta Monteur bent u aan het juiste adres. Onze deskundige loodgieters in Den Haag hebben jarenlange ervaring en zijn dag en nacht bereikbaar.",
+      "Bent u op zoek naar een betrouwbare loodgieter in Den Haag? Bij Insta Monteur bent u aan het juiste adres. Onze deskundige loodgieters in Den Haag hebben jarenlange ervaring en zijn snel ter plaatse.",
     about:
       "Bij Insta Monteur in Den Haag bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Van spoed lekkagereparaties tot het aanleggen van nieuwe leidingen — onze monteurs in Den Haag leveren kwaliteit.",
     werkgebied:
@@ -98,7 +98,7 @@ const cities: Record<string, CityData> = {
 
 const stats = [
   { value: "20 min", label: "Reactietijd" },
-  { value: "24/7", label: "Bereikbaar" },
+  { value: "Snel", label: "Ter plaatse" },
   { value: "500+", label: "Klanten" },
   { value: "100%", label: "Gecertificeerd" },
 ];
@@ -133,7 +133,7 @@ export async function generateMetadata({
   if (!city) return {};
   return {
     title: `Loodgieter ${city.name} | Insta Monteur`,
-    description: `Betrouwbare loodgieter in ${city.name}. Insta Monteur is 24/7 bereikbaar voor spoed en regulier loodgieterswerk in ${city.name} en omgeving. Vaste tarieven, gratis offerte.`,
+    description: `Betrouwbare loodgieter in ${city.name}. Insta Monteur is snel ter plaatse voor spoed en regulier loodgieterswerk in ${city.name} en omgeving. Vaste tarieven, gratis offerte.`,
     alternates: {
       canonical: `${siteConfig.url}/loodgieter-${stad}`,
     },
@@ -167,7 +167,7 @@ export default async function LoodgieterStadPage({
     {
       question: "Hoe snel kan een loodgieter bij mij thuis zijn?",
       answer:
-        `Bij spoedgevallen in ${city.name} streven wij ernaar binnen 20 minuten ter plaatse te zijn. Voor reguliere afspraken plannen wij een tijdstip dat u uitkomt. Wij zijn Ma t/m Zo 24/7 bereikbaar.`,
+        `Bij spoedgevallen in ${city.name} streven wij ernaar binnen 20 minuten ter plaatse te zijn. Voor reguliere afspraken plannen wij een tijdstip dat u uitkomt. Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00.`,
     },
     {
       question: "Moet ik een loodgieter inschakelen voor periodiek onderhoud?",
@@ -197,7 +197,7 @@ export default async function LoodgieterStadPage({
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
               <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                Regio Zuid-Holland · Ma–Zo 24/7
+                Regio Zuid-Holland · Ma–Vr 08:00–17:00
               </span>
             </div>
           </AnimateIn>
@@ -461,7 +461,7 @@ export default async function LoodgieterStadPage({
             className="font-black text-orange-400/30 whitespace-nowrap leading-none"
             style={{ fontSize: "clamp(14rem, 40vw, 32rem)", letterSpacing: "-0.05em" }}
           >
-            24/7
+            SNEL
           </span>
         </div>
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -480,7 +480,7 @@ export default async function LoodgieterStadPage({
                 <p className="text-white/80 text-lg leading-relaxed">
                   Indien je met spoed een loodgieter nodig hebt in {city.name}, zal een ervaren spoed
                   loodgieter binnen 20 minuten op locatie zijn om het probleem vakkundig op te lossen.
-                  Wij zijn Ma t/m Zo 24/7 bereikbaar.
+                  Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a

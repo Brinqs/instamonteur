@@ -5,9 +5,9 @@ import { AnimateIn } from "@/components/AnimateIn";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Spoed Loodgieter | 24/7 Direct ter Plaatse | Insta Monteur",
+  title: "Spoed Loodgieter | Snel ter Plaatse | Insta Monteur",
   description:
-    "Spoed loodgieter nodig in Zuid-Holland? Insta Monteur is 24/7 bereikbaar en binnen 20 minuten ter plaatse. Bel nu voor directe hulp bij lekkages, verstoppingen of wateroverlast.",
+    "Spoed loodgieter nodig in Zuid-Holland? Insta Monteur is snel ter plaatse voor lekkages, verstoppingen en wateroverlast. Bereikbaar op werkdagen van 08:00 tot 17:00.",
   alternates: {
     canonical: `${siteConfig.url}/spoed-loodgieter`,
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const stats = [
   { value: "20 min", label: "Responstijd" },
-  { value: "24/7", label: "Bereikbaar" },
+  { value: "Snel", label: "Ter plaatse" },
   { value: "9 steden", label: "Actief" },
   { value: "100%", label: "Gecertificeerd" },
 ];
@@ -28,8 +28,8 @@ const cards = [
   },
   {
     icon: Clock,
-    title: "24/7 beschikbaar",
-    description: "Dag en nacht, ook in het weekend en op feestdagen",
+    title: "Snel ter plaatse",
+    description: "Op werkdagen binnen 20 minuten bij u in Zuid-Holland",
   },
   {
     icon: ShieldCheck,
@@ -50,9 +50,9 @@ const faqs = [
       "Bij een waterlekkage of andere urgente situatie zijn wij doorgaans binnen 20 minuten bij u. Wij zijn actief in Rotterdam, Den Haag, Dordrecht, Delft, Leiden, Zoetermeer, Gouda, Schiedam en Vlaardingen en omgeving.",
   },
   {
-    question: "Zijn jullie ook beschikbaar buiten kantooruren?",
+    question: "Wanneer zijn jullie bereikbaar?",
     answer:
-      "Ja, Insta Monteur is 7 dagen per week, 24 uur per dag bereikbaar — ook in het weekend en op feestdagen. Een loodgietersprobleem wacht immers niet.",
+      "Insta Monteur is bereikbaar op werkdagen van 08:00 tot 17:00. Bel ons voor een snelle afspraak of kom langs voor een vrijblijvend advies.",
   },
   {
     question: "Wat valt er onder spoedservice?",
@@ -93,7 +93,7 @@ export default function SpoedLoodgieterPage() {
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
               <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                24/7 spoedservice · Binnen 20 min ter plaatse
+                Spoedservice · Binnen 20 min ter plaatse
               </span>
             </div>
           </AnimateIn>
@@ -110,7 +110,7 @@ export default function SpoedLoodgieterPage() {
           <AnimateIn variant="fadeUp" delay={200}>
             <p className="text-foreground/50 text-base lg:text-lg max-w-lg leading-relaxed mb-8">
               Waterlekkage, verstopte afvoer of een andere acute loodgietersklus? Insta Monteur is
-              dag en nacht bereikbaar en staat binnen 20 minuten bij u in huis. Snel, vakkundig en
+              snel ter plaatse en staat binnen 20 minuten bij u in huis. Vakkundig en
               betrouwbaar in heel Zuid-Holland.
             </p>
           </AnimateIn>
@@ -136,7 +136,7 @@ export default function SpoedLoodgieterPage() {
 
           <AnimateIn variant="fadeUp" delay={380}>
             <div className="flex flex-wrap gap-x-8 gap-y-2 mt-8 pt-8 border-t border-border">
-              {["24/7 bereikbaar", "Binnen 20 minuten ter plaatse", "Vaste tarieven ook bij spoed"].map((usp) => (
+              {["Snel ter plaatse", "Binnen 20 minuten ter plaatse", "Vaste tarieven ook bij spoed"].map((usp) => (
                 <span key={usp} className="flex items-center gap-2 text-sm font-medium text-foreground/70">
                   <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
                   {usp}
@@ -211,7 +211,7 @@ export default function SpoedLoodgieterPage() {
               <AnimateIn variant="fadeUp" delay={200}>
                 <p className="text-muted-foreground text-base leading-relaxed max-w-md">
                   Een waterlekkage of verstopte afvoer kan in korte tijd grote schade aanrichten.
-                  Insta Monteur is de spoedloodgieter van Zuid-Holland: dag en nacht beschikbaar,
+                  Insta Monteur is de spoedloodgieter van Zuid-Holland: snel ter plaatse,
                   snel ter plaatse en altijd eerlijk over de kosten. Geen verrassingen achteraf.
                 </p>
               </AnimateIn>
@@ -316,7 +316,7 @@ export default function SpoedLoodgieterPage() {
           </AnimateIn>
           <AnimateIn variant="fadeUp" delay={180}>
             <p className="text-muted-foreground leading-relaxed text-base max-w-3xl mb-5">
-              Insta Monteur biedt 24/7 spoedservice in Rotterdam, Den Haag, Dordrecht, Delft,
+              Insta Monteur biedt spoedservice in Rotterdam, Den Haag, Dordrecht, Delft,
               Leiden, Zoetermeer, Gouda, Schiedam en Vlaardingen. Dankzij onze strategische
               ligging in de regio zijn wij doorgaans binnen 20 minuten bij u.
             </p>
@@ -382,7 +382,7 @@ export default function SpoedLoodgieterPage() {
             className="font-black text-orange-400/30 whitespace-nowrap leading-none"
             style={{ fontSize: "clamp(14rem, 40vw, 32rem)", letterSpacing: "-0.05em" }}
           >
-            24/7
+            SNEL
           </span>
         </div>
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -399,8 +399,7 @@ export default function SpoedLoodgieterPage() {
             <AnimateIn variant="fadeRight" delay={150}>
               <div className="flex flex-col gap-4">
                 <p className="text-white/80 text-lg leading-relaxed">
-                  Bel direct of vraag een vrijblijvende offerte aan. Wij zijn 24/7 bereikbaar en
-                  staan binnen 20 minuten bij u in heel Zuid-Holland.
+                  Bel direct of vraag een vrijblijvende offerte aan. Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00 en staan snel bij u in Zuid-Holland.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
