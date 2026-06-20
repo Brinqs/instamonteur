@@ -21,6 +21,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return steden.map((stad) => ({
+      source: `/loodgieter/${stad}`,
+      destination: `/loodgieter-${stad}`,
+      permanent: true,
+    }));
+  },
   async rewrites() {
     return steden.map((stad) => ({
       source: `/loodgieter-${stad}`,
