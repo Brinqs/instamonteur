@@ -1,8 +1,27 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/siteConfig";
 
+const steden = [
+  "rotterdam",
+  "den-haag",
+  "dordrecht",
+  "delft",
+  "leiden",
+  "zoetermeer",
+  "gouda",
+  "schiedam",
+  "vlaardingen",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
+
+  const stadenUrls: MetadataRoute.Sitemap = steden.map((stad) => ({
+    url: `${base}/steden/${stad}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.9,
+  }));
 
   return [
     {
@@ -24,34 +43,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${base}/diensten/elektra`,
+      url: `${base}/diensten/loodgieter`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${base}/diensten/loodgieterswerk`,
+      url: `${base}/diensten/warmtepomp-installatie`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
-    },
-    {
-      url: `${base}/diensten/airconditioning`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${base}/diensten/ventilatie`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${base}/diensten/spoed`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
     },
     {
       url: `${base}/over-ons`,
@@ -65,5 +66,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    ...stadenUrls,
   ];
 }
