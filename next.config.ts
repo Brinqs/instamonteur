@@ -2,12 +2,8 @@ import type { NextConfig } from "next";
 
 const steden = [
   "rotterdam",
-  "den-haag",
   "dordrecht",
   "delft",
-  "leiden",
-  "zoetermeer",
-  "gouda",
   "schiedam",
   "vlaardingen",
 ];

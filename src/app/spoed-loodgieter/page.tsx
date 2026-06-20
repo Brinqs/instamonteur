@@ -47,7 +47,7 @@ const faqs = [
   {
     question: "Hoe snel zijn jullie ter plaatse bij een spoedgeval?",
     answer:
-      "Bij een waterlekkage of andere urgente situatie zijn wij doorgaans binnen 1 uur bij u. Wij zijn actief in Rotterdam, Den Haag, Dordrecht, Delft, Leiden, Zoetermeer, Gouda, Schiedam en Vlaardingen en omgeving.",
+      "Bij een waterlekkage of andere urgente situatie zijn wij doorgaans binnen 1 uur bij u. Wij zijn actief in Rotterdam, Dordrecht, Delft, Schiedam en Vlaardingen en directe omgeving.",
   },
   {
     question: "Wanneer zijn jullie bereikbaar?",
@@ -67,7 +67,7 @@ const faqs = [
   {
     question: "In welke steden zijn jullie actief?",
     answer:
-      "Insta Monteur is actief in Rotterdam, Den Haag, Dordrecht, Delft, Leiden, Zoetermeer, Gouda, Schiedam, Vlaardingen en omliggende gebieden in Rotterdam en omgeving.",
+      "Insta Monteur is actief in Rotterdam, Dordrecht, Delft, Schiedam en Vlaardingen en directe omgeving.",
   },
 ];
 
@@ -316,14 +316,12 @@ export default function SpoedLoodgieterPage() {
           </AnimateIn>
           <AnimateIn variant="fadeUp" delay={180}>
             <p className="text-muted-foreground leading-relaxed text-base max-w-3xl mb-5">
-              Insta Monteur biedt spoedservice in Rotterdam, Den Haag, Dordrecht, Delft,
-              Leiden, Zoetermeer, Gouda, Schiedam en Vlaardingen. Dankzij onze strategische
-              ligging in de regio zijn wij doorgaans binnen 1 uur bij u.
+              Insta Monteur biedt spoedservice in Rotterdam, Dordrecht, Delft, Schiedam en Vlaardingen. Dankzij onze strategische ligging in de regio zijn wij doorgaans binnen 1 uur bij u.
             </p>
           </AnimateIn>
           <AnimateIn variant="fadeUp" delay={240}>
             <div className="flex flex-wrap gap-3 mt-4">
-              {["Rotterdam", "Den Haag", "Dordrecht", "Delft", "Leiden", "Zoetermeer", "Gouda", "Schiedam", "Vlaardingen"].map((stad) => (
+              {["Rotterdam", "Dordrecht", "Delft", "Schiedam", "Vlaardingen"].map((stad) => (
                 <Link
                   key={stad}
                   href={`/steden/${stad.toLowerCase().replace(" ", "-")}`}

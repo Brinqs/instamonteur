@@ -32,8 +32,7 @@ export function LocalBusinessStructuredData() {
     currenciesAccepted: "EUR",
     paymentAccepted: "Cash, Credit Card, Bank Transfer",
     areaServed: [
-      "Rotterdam", "Den Haag", "Dordrecht", "Delft", "Leiden",
-      "Zoetermeer", "Gouda", "Schiedam", "Vlaardingen",
+      "Rotterdam", "Dordrecht", "Delft", "Schiedam", "Vlaardingen",
     ],
     sameAs: [
       siteConfig.socials.facebook,

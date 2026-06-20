@@ -15,10 +15,6 @@ const cities = [
   { label: "Dordrecht", href: "/loodgieter-dordrecht" },
   { label: "Vlaardingen", href: "/loodgieter-vlaardingen" },
   { label: "Delft", href: "/loodgieter-delft" },
-  { label: "Gouda", href: "/loodgieter-gouda" },
-  { label: "Zoetermeer", href: "/loodgieter-zoetermeer" },
-  { label: "Leiden", href: "/loodgieter-leiden" },
-  { label: "Den Haag", href: "/loodgieter-den-haag" },
   { label: "Schiedam", href: "/loodgieter-schiedam" },
 ];
 
@@ -39,7 +35,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-5 -mt-6" style={{ fontFamily: "var(--font-display)" }}>
-              Dé installatie monteur &amp; loodgieter in Rotterdam, Dordrecht, Delft, Zoetermeer, Vlaardingen en Schiedam.
+              Dé installatie monteur &amp; loodgieter in Rotterdam, Dordrecht, Delft, Vlaardingen en Schiedam.
             </p>
           </div>
 

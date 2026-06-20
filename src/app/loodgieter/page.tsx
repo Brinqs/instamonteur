@@ -57,7 +57,7 @@ const faqs = [
   {
     question: "In welke regio zijn jullie actief?",
     answer:
-      "Insta Monteur is actief in regio Rotterdam en de grote steden Rotterdam, Den Haag, Leiden, Gouda & Zoetermeer.",
+      "Insta Monteur is actief in Rotterdam en directe omgeving: Dordrecht, Delft, Schiedam en Vlaardingen.",
   },
   {
     question: "Wat moet ik doen bij een lekkage?",
@@ -205,9 +205,7 @@ export default function LoodgieterPage() {
               </AnimateIn>
               <AnimateIn variant="fadeUp" delay={200}>
                 <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-                  Wij zijn een gerenommeerd bedrijf in Rotterdam en omgeving en ons werkgebied strekt zich
-                  uit tot Rotterdam, Den Haag, Leiden, Gouda &amp; Zoetermeer. Van een kleine
-                  reparatie tot een complete installatie, wij leveren kwaliteit met garantie.
+                  Wij zijn een gerenommeerd loodgietersbedrijf in Rotterdam en omgeving. Ons werkgebied omvat Rotterdam, Dordrecht, Delft, Schiedam en Vlaardingen. Van een kleine reparatie tot een complete installatie, wij leveren kwaliteit met garantie.
                 </p>
               </AnimateIn>
               <AnimateIn variant="fadeUp" delay={280}>

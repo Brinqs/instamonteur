@@ -57,7 +57,7 @@ const faqs = [
   {
     question: "In welke regio zijn jullie actief?",
     answer:
-      "Insta Monteur is actief in regio Rotterdam en de grote steden Rotterdam, Den Haag, Leiden, Gouda & Zoetermeer.",
+      "Insta Monteur is actief in Rotterdam en directe omgeving: Dordrecht, Delft, Schiedam en Vlaardingen.",
   },
   {
     question: "Wat zijn enkele veelvoorkomende problemen bij een cv-ketel?",

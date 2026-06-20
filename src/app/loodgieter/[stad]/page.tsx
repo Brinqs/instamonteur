@@ -47,43 +47,7 @@ const cities: Record<string, CityData> = {
     about:
       "Bij Insta Monteur in Delft bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Van spoedklussen tot geplande installaties, onze monteurs in Delft werken netjes, vakkundig en klantgericht.",
     werkgebied:
-      "Wij zijn actief in Delft en omstreken, waaronder Den Haag, Zoetermeer, Pijnacker-Nootdorp en regio Rotterdam.",
-  },
-  gouda: {
-    name: "Gouda",
-    intro:
-      "Op zoek naar een loodgieter in Gouda? Bij Insta Monteur bent u aan het juiste adres. Wij bieden betrouwbare loodgietersdiensten in Gouda en omgeving, snel bereikbaar voor spoed en regulier werk.",
-    about:
-      "Bij Insta Monteur in Gouda bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Of het nu gaat om een lekkage, verstopte afvoer of complete installatie — onze monteurs in Gouda staan voor u klaar.",
-    werkgebied:
-      "Wij zijn actief in Gouda en omstreken, waaronder Bodegraven, Waddinxveen, Alphen aan den Rijn en regio Rotterdam.",
-  },
-  zoetermeer: {
-    name: "Zoetermeer",
-    intro:
-      "Zoekt u een vakkundige loodgieter in Zoetermeer? Insta Monteur levert snelle en betrouwbare service in Zoetermeer. Onze ervaren monteurs zijn uitgerust met de nieuwste apparatuur en binnen 1 uur ter plaatse.",
-    about:
-      "Bij Insta Monteur in Zoetermeer bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Van lekkage tot nieuw sanitair — wij bieden kwalitatief loodgieterswerk in Zoetermeer met garantie.",
-    werkgebied:
-      "Wij zijn actief in Zoetermeer en omstreken, waaronder Den Haag, Delft, Pijnacker-Nootdorp en regio Rotterdam.",
-  },
-  leiden: {
-    name: "Leiden",
-    intro:
-      "Op zoek naar een betrouwbare loodgieter in Leiden? Insta Monteur is snel bij u. Onze loodgieters in Leiden werken snel, vakkundig en altijd met vaste tarieven zonder verborgen kosten.",
-    about:
-      "Bij Insta Monteur in Leiden bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Of u nu een lekkage heeft, een afvoer wilt laten ontstoppen of sanitair wilt laten plaatsen — wij zijn er voor u.",
-    werkgebied:
-      "Wij zijn actief in Leiden en omstreken, waaronder Leiderdorp, Zoeterwoude, Alphen aan den Rijn en regio Rotterdam.",
-  },
-  "den-haag": {
-    name: "Den Haag",
-    intro:
-      "Bent u op zoek naar een betrouwbare loodgieter in Den Haag? Bij Insta Monteur bent u aan het juiste adres. Onze deskundige loodgieters in Den Haag hebben jarenlange ervaring en zijn snel ter plaatse.",
-    about:
-      "Bij Insta Monteur in Den Haag bieden wij eerlijke en transparante prijzen voor onze loodgietersdiensten. Van spoed lekkagereparaties tot het aanleggen van nieuwe leidingen — onze monteurs in Den Haag leveren kwaliteit.",
-    werkgebied:
-      "Wij zijn actief in Den Haag en omstreken, waaronder Delft, Zoetermeer, Rijswijk, Wateringen en regio Rotterdam.",
+      "Wij zijn actief in Delft en omstreken, waaronder Rotterdam, Schiedam, Pijnacker-Nootdorp en directe regio.",
   },
   schiedam: {
     name: "Schiedam",

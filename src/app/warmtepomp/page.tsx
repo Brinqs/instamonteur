@@ -209,8 +209,7 @@ export default function WarmtepompPage() {
                   duurzame ontwikkelingen binnen ons vakgebied. Als allround installatiebedrijf
                   willen wij bijdragen aan het verduurzamen van huizen en bedrijven door het
                   aanbieden van warmtepompen en andere duurzame oplossingen. Onze installateurs zijn
-                  werkzaam in de regio Rotterdam en ons werkgebied strekt zich uit tot Rotterdam,
-                  Den Haag, Leiden, Gouda &amp; Zoetermeer.
+                  werkzaam in Rotterdam en directe omgeving: Dordrecht, Delft, Schiedam en Vlaardingen.
                 </p>
               </AnimateIn>
               <AnimateIn variant="fadeUp" delay={280}>

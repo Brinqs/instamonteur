@@ -3,12 +3,8 @@ import { siteConfig } from "@/lib/siteConfig";
 
 const steden = [
   "rotterdam",
-  "den-haag",
   "dordrecht",
   "delft",
-  "leiden",
-  "zoetermeer",
-  "gouda",
   "schiedam",
   "vlaardingen",
 ];

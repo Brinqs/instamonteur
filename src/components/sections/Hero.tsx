@@ -61,8 +61,7 @@ export function Hero() {
             </h1>
 
             <p className="hidden sm:block text-foreground/50 text-base lg:text-lg max-w-lg leading-relaxed mb-6 lg:mb-10 font-normal tracking-normal">
-              Dé installatie monteur &amp; loodgieter in Rotterdam, Dordrecht, Delft,
-              Zoetermeer, Vlaardingen en Schiedam.
+              Dé installatie monteur &amp; loodgieter in Rotterdam, Dordrecht, Delft, Vlaardingen en Schiedam.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">

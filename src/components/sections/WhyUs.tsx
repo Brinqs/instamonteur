@@ -14,7 +14,7 @@ const reasons = [
   { icon: Award, title: "Vakkundig & professioneel", description: "Alle monteurs zijn gecertificeerd en werken volgens de hoogste standaarden." },
   { icon: MessageSquare, title: "Heldere afspraken", description: "Eerlijke communicatie. Wat wij afspreken, dat doen wij ook." },
   { icon: Clock, title: "Snel ter plaatse", description: "Bij spoed zijn wij razendsnel bij u. Bereikbaar op werkdagen." },
-  { icon: MapPin, title: "Rotterdam & omgeving", description: "Rotterdam, Den Haag, Leiden, Gouda, Dordrecht, Delft, Schiedam en omgeving." },
+  { icon: MapPin, title: "Rotterdam & omgeving", description: "Rotterdam, Dordrecht, Delft, Schiedam, Vlaardingen en directe omgeving." },
   { icon: Shield, title: "Kwaliteitsgarantie", description: "Op al ons werk geven wij garantie. Niet tevreden? Wij lossen het op." },
 ];
 

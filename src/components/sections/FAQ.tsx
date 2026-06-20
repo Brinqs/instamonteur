@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "In welke steden zijn jullie actief?",
     answer:
-      "Wij zijn actief in Rotterdam en omgeving, waaronder Rotterdam, Dordrecht, Delft, Zoetermeer, Vlaardingen en Schiedam. Twijfelt u of wij bij u in de buurt komen? Bel ons en wij vertellen het u direct.",
+      "Wij zijn actief in Rotterdam en directe omgeving: Dordrecht, Delft, Schiedam en Vlaardingen. Twijfelt u of wij bij u in de buurt komen? Bel ons en wij vertellen het u direct.",
   },
   {
     question: "Hebben jullie garantie op het werk?",
