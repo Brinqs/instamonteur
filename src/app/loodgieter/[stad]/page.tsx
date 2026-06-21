@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Phone, ArrowRight, Wrench, Droplets, Waves, ShieldCheck, Star, CheckCircle, MapPin } from "lucide-react";
 import { AnimateIn } from "@/components/AnimateIn";
@@ -215,19 +216,21 @@ export default async function LoodgieterStadPage({
 
       {/* Hero */}
       <section className="bg-white pt-[180px] pb-16 lg:pb-24 relative overflow-x-clip">
-        <div
-          className="absolute inset-y-0 right-0 flex items-center pointer-events-none select-none overflow-hidden"
-          aria-hidden="true"
-        >
-          <span
-            className="font-black leading-none whitespace-nowrap"
-            style={{ fontSize: "clamp(6rem, 16vw, 14rem)", letterSpacing: "-0.04em", color: "rgba(15,40,120,0.04)" }}
+        {!isRotterdam && (
+          <div
+            className="absolute inset-y-0 right-0 flex items-center pointer-events-none select-none overflow-hidden"
+            aria-hidden="true"
           >
-            {city.name.toUpperCase()}
-          </span>
-        </div>
+            <span
+              className="font-black leading-none whitespace-nowrap"
+              style={{ fontSize: "clamp(6rem, 16vw, 14rem)", letterSpacing: "-0.04em", color: "rgba(15,40,120,0.04)" }}
+            >
+              {city.name.toUpperCase()}
+            </span>
+          </div>
+        )}
 
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className={`container mx-auto px-6 max-w-7xl relative z-10 ${isRotterdam ? "grid lg:grid-cols-2 gap-16 items-center" : ""}`}>
           <AnimateIn variant="fadeIn">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
@@ -282,6 +285,21 @@ export default async function LoodgieterStadPage({
             </div>
           </AnimateIn>
         </div>
+
+        {isRotterdam && (
+          <AnimateIn variant="fadeRight" delay={200}>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+              <Image
+                src="/images/loodgieter-rotterdam-team.jpg"
+                alt="Insta Monteur loodgieters in Rotterdam"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </AnimateIn>
+        )}
       </section>
 
       {/* Stats balk */}
@@ -393,27 +411,41 @@ export default async function LoodgieterStadPage({
                 </a>
               </AnimateIn>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: Wrench, title: "Leidingen aanleggen", desc: "Netjes, lekvrij en veilig aangelegd" },
-                { icon: Droplets, title: "Lekkage verhelpen", desc: "Snel opsporen en adequaat oplossen" },
-                { icon: Waves, title: "Afvoer ontstoppen", desc: "Hogedruk en camera-inspectie" },
-                { icon: ShieldCheck, title: "Spoedservice", desc: "Binnen 1 uur ter plaatse" },
-              ].map((card, i) => {
-                const Icon = card.icon;
-                return (
-                  <AnimateIn key={card.title} variant="fadeUp" delay={i * 80}>
-                    <div className="p-5 border border-border rounded-2xl bg-white hover:border-orange-200 hover:bg-orange-50/40 transition-all group h-full">
-                      <div className="w-9 h-9 rounded-xl bg-orange-100 flex items-center justify-center mb-3 group-hover:bg-orange-500 transition-colors">
-                        <Icon className="w-4 h-4 text-orange-500 group-hover:text-white transition-colors" />
+            {isRotterdam ? (
+              <AnimateIn variant="fadeRight" delay={100}>
+                <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
+                  <Image
+                    src="/images/loodgieter-rotterdam-aan-het-werk.jpg"
+                    alt="Loodgieter aan het werk in Rotterdam"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              </AnimateIn>
+            ) : (
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { icon: Wrench, title: "Leidingen aanleggen", desc: "Netjes, lekvrij en veilig aangelegd" },
+                  { icon: Droplets, title: "Lekkage verhelpen", desc: "Snel opsporen en adequaat oplossen" },
+                  { icon: Waves, title: "Afvoer ontstoppen", desc: "Hogedruk en camera-inspectie" },
+                  { icon: ShieldCheck, title: "Spoedservice", desc: "Binnen 1 uur ter plaatse" },
+                ].map((card, i) => {
+                  const Icon = card.icon;
+                  return (
+                    <AnimateIn key={card.title} variant="fadeUp" delay={i * 80}>
+                      <div className="p-5 border border-border rounded-2xl bg-white hover:border-orange-200 hover:bg-orange-50/40 transition-all group h-full">
+                        <div className="w-9 h-9 rounded-xl bg-orange-100 flex items-center justify-center mb-3 group-hover:bg-orange-500 transition-colors">
+                          <Icon className="w-4 h-4 text-orange-500 group-hover:text-white transition-colors" />
+                        </div>
+                        <h3 className="font-bold text-brand text-sm mb-1">{card.title}</h3>
+                        <p className="text-muted-foreground text-xs leading-relaxed">{card.desc}</p>
                       </div>
-                      <h3 className="font-bold text-brand text-sm mb-1">{card.title}</h3>
-                      <p className="text-muted-foreground text-xs leading-relaxed">{card.desc}</p>
-                    </div>
-                  </AnimateIn>
-                );
-              })}
-            </div>
+                    </AnimateIn>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </section>
