@@ -215,7 +215,8 @@ export default async function LoodgieterStadPage({
       />
 
       {/* Hero */}
-      <section className="bg-white pt-[180px] pb-16 lg:pb-24 relative overflow-x-clip">
+      <section className={`bg-white pt-[180px] pb-16 lg:pb-24 relative overflow-hidden${isRotterdam ? " lg:min-h-[700px]" : ""}`}>
+        {/* Non-Rotterdam: decorative city name watermark */}
         {!isRotterdam && (
           <div
             className="absolute inset-y-0 right-0 flex items-center pointer-events-none select-none overflow-hidden"
@@ -230,76 +231,108 @@ export default async function LoodgieterStadPage({
           </div>
         )}
 
-        <div className={`container mx-auto px-6 max-w-7xl relative z-10 ${isRotterdam ? "grid lg:grid-cols-2 gap-16 items-center" : ""}`}>
-          <AnimateIn variant="fadeIn">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
-              <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                Rotterdam en omgeving · Ma–Vr 08:00–17:00
-              </span>
-            </div>
-          </AnimateIn>
-
-          <AnimateIn variant="fadeUp" delay={100}>
-            <h1
-              className="font-black text-brand leading-[0.9] tracking-[-0.04em] mb-8"
-              style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
-            >
-              Loodgieter {city.name}
-            </h1>
-          </AnimateIn>
-
-          <AnimateIn variant="fadeUp" delay={200}>
-            <p className="text-foreground/50 text-base lg:text-lg max-w-lg leading-relaxed mb-8">
-              {city.intro}
-            </p>
-          </AnimateIn>
-
-          <AnimateIn variant="fadeUp" delay={300}>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                className="inline-flex items-center justify-center gap-2.5 bg-brand text-white font-bold px-7 py-4 rounded-full hover:bg-orange-500 transition-colors text-base"
-              >
-                <Phone className="w-4 h-4" />
-                {siteConfig.phone}
-              </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 border-2 border-brand text-brand font-bold px-7 py-4 rounded-full hover:bg-brand hover:text-white transition-colors text-base"
-              >
-                Offerte aanvragen
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </AnimateIn>
-
-          <AnimateIn variant="fadeUp" delay={380}>
-            <div className="flex flex-wrap gap-x-8 gap-y-2 mt-8 pt-8 border-t border-border">
-              {["Binnen 1 uur ter plaatse", "Vaste tarieven", "Eerlijk en transparant"].map((usp) => (
-                <span key={usp} className="flex items-center gap-2 text-sm font-medium text-foreground/70">
-                  <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
-                  {usp}
-                </span>
-              ))}
-            </div>
-          </AnimateIn>
-        </div>
-
+        {/* Rotterdam: compositie — brug rechtsboven achter het huis */}
         {isRotterdam && (
-          <AnimateIn variant="fadeRight" delay={200}>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+          <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full">
+            {/* Brug: achtergrond, rechtsboven */}
+            <div className="absolute top-[20%] right-0 w-[75%] h-[60%] z-0" style={{ transform: "translate(-60px, -20px) scale(1.2)" }}>
               <Image
-                src="/images/loodgieter-rotterdam-team.jpg"
-                alt="Insta Monteur loodgieters in Rotterdam"
+                src="/images/erasmusbrug-3d.png"
+                alt="3D illustratie van de Erasmusbrug Rotterdam"
                 fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-contain object-right-top"
+                sizes="37vw"
+                unoptimized
               />
             </div>
-          </AnimateIn>
+            {/* Huis: voorgrond, kleiner en lager gecentreerd */}
+            <div className="absolute top-[25%] left-0 right-0 h-[70%] z-10" style={{ transform: "translate(-60px, -20px) scale(1.2)" }}>
+              <Image
+                src="/images/hero-warmtepomp-3d.png"
+                alt="3D illustratie van een Rotterdams huis met warmtepomp door Insta Monteur"
+                fill
+                className="object-contain object-center"
+                priority
+                sizes="50vw"
+                unoptimized
+              />
+            </div>
+          </div>
         )}
+
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <div className={isRotterdam ? "lg:w-[50%] lg:pr-6" : ""}>
+            <AnimateIn variant="fadeIn">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
+                <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
+                  Rotterdam en omgeving · Ma–Vr 08:00–17:00
+                </span>
+              </div>
+            </AnimateIn>
+
+            <AnimateIn variant="fadeUp" delay={100}>
+              <h1
+                className="font-black text-brand leading-[0.9] tracking-[-0.04em] mb-8"
+                style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
+              >
+                Loodgieter {city.name}
+              </h1>
+            </AnimateIn>
+
+            <AnimateIn variant="fadeUp" delay={200}>
+              <p className="text-foreground/50 text-base lg:text-lg max-w-lg leading-relaxed mb-8">
+                {city.intro}
+              </p>
+            </AnimateIn>
+
+            <AnimateIn variant="fadeUp" delay={300}>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                  className="inline-flex items-center justify-center gap-2.5 bg-brand text-white font-bold px-7 py-4 rounded-full hover:bg-orange-500 transition-colors text-base"
+                >
+                  <Phone className="w-4 h-4" />
+                  {siteConfig.phone}
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-brand text-brand font-bold px-7 py-4 rounded-full hover:bg-brand hover:text-white transition-colors text-base"
+                >
+                  Offerte aanvragen
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </AnimateIn>
+
+            <AnimateIn variant="fadeUp" delay={380}>
+              <div className="flex flex-wrap gap-x-8 gap-y-2 mt-8 pt-8 border-t border-border">
+                {["Binnen 1 uur ter plaatse", "Vaste tarieven", "Eerlijk en transparant"].map((usp) => (
+                  <span key={usp} className="flex items-center gap-2 text-sm font-medium text-foreground/70">
+                    <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
+                    {usp}
+                  </span>
+                ))}
+              </div>
+            </AnimateIn>
+
+            {/* Mobile image */}
+            {isRotterdam && (
+              <AnimateIn variant="fadeUp" delay={440}>
+                <div className="lg:hidden relative aspect-[4/3] rounded-2xl overflow-hidden mt-10 shadow-xl">
+                  <Image
+                    src="/images/hero-warmtepomp-3d.png"
+                    alt="3D illustratie van een Rotterdams huis met warmtepomp installatie door Insta Monteur"
+                    fill
+                    className="object-contain object-center"
+                    priority
+                    sizes="100vw"
+                  />
+                </div>
+              </AnimateIn>
+            )}
+          </div>
+        </div>
       </section>
 
       {/* Stats balk */}
@@ -415,8 +448,8 @@ export default async function LoodgieterStadPage({
               <AnimateIn variant="fadeRight" delay={100}>
                 <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
                   <Image
-                    src="/images/loodgieter-rotterdam-aan-het-werk.jpg"
-                    alt="Loodgieter aan het werk in Rotterdam"
+                    src="/images/loodgieter-rotterdam-cv-ketel.jpg"
+                    alt="CV-ketel installatie door Insta Monteur in Rotterdam"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
