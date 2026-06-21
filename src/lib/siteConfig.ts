@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Insta Monteur is dé loodgieter in Rotterdam en omgeving. Actief in Rotterdam, Dordrecht, Delft, Schiedam en Vlaardingen. Altijd een professionele monteur snel bij jou in de buurt.",
   url: "https://instamonteur.nl",
-  phone: "085 060 10 27",
+  phone: "085 333 2527",
   email: "info@instamonteur.nl",
   address: {
     street: "Rotterdam",
