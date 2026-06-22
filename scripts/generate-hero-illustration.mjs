@@ -13,16 +13,33 @@ if (!API_KEY) {
 
 const sharedStyle = `Style: modern flat-shaded 3D isometric illustration, identical to a high-end SaaS product illustration. Dark navy blue (#0f2840) as dominant color, orange (#f97316) accents. Bold silhouettes, smooth surfaces, no textures, subtle drop shadow beneath objects. Pure white background. No people, no text, no watermarks.`;
 
+const flatStyle = `Style: modern 2D flat illustration, bold graphic design. Dark navy blue (#0f2840) as dominant color for buildings and structures. Orange (#f97316) as accent color for highlights, windows, and details. Cream/off-white (#f5f0e8) for sky and background fill. Clean flat shapes, no gradients, no shadows, graphic silhouette style like a travel poster. No people, no text, no watermarks. Wide landscape composition filling the entire frame edge to edge.`;
+
 const images = [
   {
-    filename: "hero-warmtepomp-3d.png",
-    aspectRatio: "3:4",
-    prompt: `Modern 3D isometric illustration. A stylized Dutch brick townhouse in dark navy blue (#0f2840) with an orange (#f97316) front door and white window frames. A modern white heat pump unit stands beside the house. The house has a simple pitched roof in dark navy. Centered portrait composition with generous white space. ${sharedStyle}`,
+    filename: "stad-rotterdam-2d.png",
+    aspectRatio: "16:9",
+    prompt: `2D flat illustration of the Rotterdam skyline. The iconic Erasmus Bridge with its asymmetric swan-neck pylon dominates the scene, with modern high-rise buildings in the background. The Maas river reflects below. Navy blue buildings and bridge, orange accent lights and reflections, warm cream sky. Fills the entire frame. ${flatStyle}`,
   },
   {
-    filename: "erasmusbrug-3d.png",
-    aspectRatio: "3:4",
-    prompt: `Modern 3D isometric illustration. The iconic Rotterdam Erasmus Bridge rendered in dark navy blue (#0f2840). The asymmetric single pylon ("swan neck") is clearly recognizable, with cable-stay wires fanning outward. Orange (#f97316) accent details on the cables and deck edge. The bridge is shown from a slight isometric angle. Centered portrait composition with generous white space. ${sharedStyle}`,
+    filename: "stad-dordrecht-2d.png",
+    aspectRatio: "16:9",
+    prompt: `2D flat illustration of Dordrecht, Netherlands. The tall Grote Kerk (Onze-Lieve-Vrouwekerk) tower dominates the skyline, surrounded by traditional Dutch canal houses along the waterfront. Water in the foreground reflecting the buildings. Navy blue buildings, orange window details, warm cream sky. Fills the entire frame. ${flatStyle}`,
+  },
+  {
+    filename: "stad-delft-2d.png",
+    aspectRatio: "16:9",
+    prompt: `2D flat illustration of Delft, Netherlands. The tall slender tower of the Nieuwe Kerk rises above the classic Dutch canal houses along the Markt. A canal with a bridge in the foreground. Navy blue buildings, orange window accents, warm cream sky. Fills the entire frame. ${flatStyle}`,
+  },
+  {
+    filename: "stad-schiedam-2d.png",
+    aspectRatio: "16:9",
+    prompt: `2D flat illustration of Schiedam, Netherlands. Multiple very tall traditional Dutch windmills (the tallest in the world) dominate the skyline, with classic Dutch buildings below. Navy blue windmills and buildings, orange sails and accents, warm cream sky. Fills the entire frame. ${flatStyle}`,
+  },
+  {
+    filename: "stad-vlaardingen-2d.png",
+    aspectRatio: "16:9",
+    prompt: `2D flat illustration of Vlaardingen, Netherlands. Traditional Dutch herring fishing boats in the historic harbor, with the old church tower visible behind rows of canal houses. Calm water in the foreground. Navy blue boats and buildings, orange hull accents and windows, warm cream sky. Fills the entire frame. ${flatStyle}`,
   },
 ];
 

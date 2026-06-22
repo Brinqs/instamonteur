@@ -215,48 +215,32 @@ export default async function LoodgieterStadPage({
       />
 
       {/* Hero */}
-      <section className={`bg-white pt-[180px] pb-16 lg:pb-24 relative overflow-hidden${isRotterdam ? " lg:min-h-[700px]" : ""}`}>
-        {/* Non-Rotterdam: decorative city name watermark */}
-        {!isRotterdam && (
-          <div
-            className="absolute inset-y-0 right-0 flex items-center pointer-events-none select-none overflow-hidden"
-            aria-hidden="true"
+      <section className={`bg-white pt-[120px] pb-16 lg:pb-24 relative overflow-hidden${isRotterdam ? " lg:min-h-[700px]" : ""}`}>
+        {/* Decorative city name watermark — alle steden inclusief Rotterdam */}
+        <div
+          className="absolute inset-y-0 right-0 flex items-center pointer-events-none select-none overflow-hidden"
+          aria-hidden="true"
+        >
+          <span
+            className="font-black leading-none whitespace-nowrap"
+            style={{ fontSize: "clamp(6rem, 16vw, 14rem)", letterSpacing: "-0.04em", color: "rgba(15,40,120,0.04)" }}
           >
-            <span
-              className="font-black leading-none whitespace-nowrap"
-              style={{ fontSize: "clamp(6rem, 16vw, 14rem)", letterSpacing: "-0.04em", color: "rgba(15,40,120,0.04)" }}
-            >
-              {city.name.toUpperCase()}
-            </span>
-          </div>
-        )}
+            {city.name.toUpperCase()}
+          </span>
+        </div>
 
-        {/* Rotterdam: compositie — brug rechtsboven achter het huis */}
+        {/* Rotterdam: hero illustratie — huis, Erasmusbrug en busje */}
         {isRotterdam && (
           <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full">
-            {/* Brug: achtergrond, rechtsboven */}
-            <div className="absolute top-[20%] right-0 w-[75%] h-[60%] z-0" style={{ transform: "translate(-60px, -20px) scale(1.2)" }}>
-              <Image
-                src="/images/erasmusbrug-3d.png"
-                alt="3D illustratie van de Erasmusbrug Rotterdam"
-                fill
-                className="object-contain object-right-top"
-                sizes="37vw"
-                unoptimized
-              />
-            </div>
-            {/* Huis: voorgrond, kleiner en lager gecentreerd */}
-            <div className="absolute top-[25%] left-0 right-0 h-[70%] z-10" style={{ transform: "translate(-60px, -20px) scale(1.2)" }}>
-              <Image
-                src="/images/hero-warmtepomp-3d.png"
-                alt="3D illustratie van een Rotterdams huis met warmtepomp door Insta Monteur"
-                fill
-                className="object-contain object-center"
-                priority
-                sizes="50vw"
-                unoptimized
-              />
-            </div>
+            <Image
+              src="/images/hero-rotterdam-3d-v2.png"
+              alt="3D illustratie van een Rotterdams huis met warmtepomp, Erasmusbrug en Insta Monteur servicebusje"
+              fill
+              className="object-contain object-center"
+              priority
+              sizes="50vw"
+              unoptimized
+            />
           </div>
         )}
 
@@ -276,7 +260,7 @@ export default async function LoodgieterStadPage({
                 className="font-black text-brand leading-[0.9] tracking-[-0.04em] mb-8"
                 style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
               >
-                Loodgieter {city.name}
+                Loodgieter <span className="text-orange-500">{city.name}</span>
               </h1>
             </AnimateIn>
 
@@ -321,12 +305,13 @@ export default async function LoodgieterStadPage({
               <AnimateIn variant="fadeUp" delay={440}>
                 <div className="lg:hidden relative aspect-[4/3] rounded-2xl overflow-hidden mt-10 shadow-xl">
                   <Image
-                    src="/images/hero-warmtepomp-3d.png"
-                    alt="3D illustratie van een Rotterdams huis met warmtepomp installatie door Insta Monteur"
+                    src="/images/hero-rotterdam-3d-v2.png"
+                    alt="3D illustratie van een Rotterdams huis met warmtepomp, Erasmusbrug en Insta Monteur servicebusje"
                     fill
                     className="object-contain object-center"
                     priority
                     sizes="100vw"
+                    unoptimized
                   />
                 </div>
               </AnimateIn>

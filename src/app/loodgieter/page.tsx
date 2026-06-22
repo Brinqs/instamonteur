@@ -70,7 +70,7 @@ export default function LoodgieterPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white pt-[180px] pb-16 lg:pb-24 relative overflow-x-clip">
+      <section className="bg-white pt-[120px] pb-16 lg:pb-24 relative overflow-x-clip">
         <div
           className="absolute inset-y-0 right-0 flex items-center pointer-events-none select-none overflow-hidden"
           aria-hidden="true"
