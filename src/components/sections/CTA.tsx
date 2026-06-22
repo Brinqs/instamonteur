@@ -34,7 +34,7 @@ export function CTA() {
           <AnimateIn variant="fadeRight" delay={150}>
           <div className="flex flex-col gap-4">
             <p className="text-white/80 text-lg leading-relaxed">
-              Wij zijn bereikbaar van maandag t/m vrijdag van 08:00 tot 17:00. Neem vandaag nog contact op en wij staan snel bij u.
+              Wij zijn bereikbaar van maandag t/m zaterdag van 08:00 tot 17:00. Neem vandaag nog contact op en wij zijn er snel.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a

@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: "Spoed Loodgieter | Snel ter Plaatse | Insta Monteur",
   description:
-    "Spoed loodgieter nodig in Rotterdam en omgeving? Insta Monteur is snel ter plaatse voor lekkages, verstoppingen en wateroverlast. Bereikbaar op werkdagen van 08:00 tot 17:00.",
+    "Spoed loodgieter nodig in Rotterdam en omgeving? Insta Monteur is snel ter plaatse voor lekkages, verstoppingen en wateroverlast. Bereikbaar op Ma t/m Za van 08:00 tot 17:00.",
   alternates: {
     canonical: `${siteConfig.url}/spoed-loodgieter`,
   },
@@ -52,7 +52,7 @@ const faqs = [
   {
     question: "Wanneer zijn jullie bereikbaar?",
     answer:
-      "Insta Monteur is bereikbaar op werkdagen van 08:00 tot 17:00. Bel ons voor een snelle afspraak of kom langs voor een vrijblijvend advies.",
+      "Insta Monteur is bereikbaar op Ma t/m Za van 08:00 tot 17:00. Bel ons voor een snelle afspraak of kom langs voor een vrijblijvend advies.",
   },
   {
     question: "Wat valt er onder spoedservice?",
@@ -397,7 +397,7 @@ export default function SpoedLoodgieterPage() {
             <AnimateIn variant="fadeRight" delay={150}>
               <div className="flex flex-col gap-4">
                 <p className="text-white/80 text-lg leading-relaxed">
-                  Bel direct of vraag een vrijblijvende offerte aan. Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00 en staan snel bij u in Rotterdam en omgeving.
+                  Bel direct of vraag een vrijblijvende offerte aan. Wij zijn bereikbaar op Ma t/m Za van 08:00 tot 17:00 en staan snel bij u in Rotterdam en omgeving.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a

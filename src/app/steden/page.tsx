@@ -45,7 +45,7 @@ const steden = [
 
 export default function StedenpaginaPage() {
   return (
-    <main className="bg-white pt-[200px] pb-24">
+    <main className="bg-white pt-[140px] pb-24">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="mb-14">
           <div className="flex items-center gap-3 mb-6" style={{ animation: "fadeUpIn 0.5s ease both" }}>

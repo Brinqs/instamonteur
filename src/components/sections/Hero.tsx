@@ -27,7 +27,7 @@ function Letters({ text, baseDelay, className, style }: {
 
 export function Hero() {
   return (
-    <section className="lg:min-h-[calc(100vh-44px)] bg-white flex flex-col pt-[96px] lg:pt-[60px] overflow-x-clip">
+    <section className="lg:min-h-[calc(100vh-44px)] bg-white flex flex-col pt-[80px] lg:pt-[40px] overflow-x-clip">
 
       <div className="lg:flex-1 container mx-auto px-6 max-w-7xl">
         <div className="grid lg:grid-cols-[1fr_640px] gap-8 lg:gap-12 items-end lg:h-full">
@@ -37,7 +37,7 @@ export function Hero() {
             <div className="flex items-center gap-3 mb-8 lg:mb-6">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
               <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                Rotterdam · Ma–Vr 08:00–17:00
+                Rotterdam · Ma–Za 08:00–17:00
               </span>
             </div>
 

@@ -14,7 +14,7 @@ const faqs = [
   {
     question: "Hoe snel kan een loodgieter bij mij zijn?",
     answer:
-      "Bij een spoedsituatie zijn wij gemiddeld binnen 1 uur bij u. Wij zijn bereikbaar op werkdagen van 08:00 tot 17:00. Bel ons en wij sturen direct een monteur.",
+      "Bij een spoedsituatie zijn wij gemiddeld binnen 1 uur bij u. Wij zijn bereikbaar op Ma t/m Za van 08:00 tot 17:00. Bel ons en wij sturen direct een monteur.",
   },
   {
     question: "Wat moet ik doen bij een lekkage thuis?",

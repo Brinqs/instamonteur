@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: "Loodgieter Rotterdam | Insta Monteur",
   description:
-    "Insta Monteur is uw betrouwbare loodgieter in Rotterdam en omgeving. Spoed, lekkage, leidingen en meer. bereikbaar op werkdagen van 08:00 tot 17:00.",
+    "Insta Monteur is uw betrouwbare loodgieter in Rotterdam en omgeving. Spoed, lekkage, leidingen en meer. bereikbaar op Ma t/m Za van 08:00 tot 17:00.",
   alternates: {
     canonical: `${siteConfig.url}/loodgieter`,
   },
@@ -88,7 +88,7 @@ export default function LoodgieterPage() {
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
               <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                Rotterdam en omgeving · Ma–Vr 08:00–17:00
+                Rotterdam en omgeving · Ma–Za 08:00–17:00
               </span>
             </div>
           </AnimateIn>
@@ -390,7 +390,7 @@ export default function LoodgieterPage() {
                 <p className="text-white/80 text-lg leading-relaxed">
                   Indien je met spoed een loodgieter nodig hebt, zal een ervaren spoed loodgieter
                   binnen 1 uur op locatie zijn om het probleem vakkundig op te lossen. Wij zijn
-                  bereikbaar op werkdagen van 08:00 tot 17:00.
+                  bereikbaar op Ma t/m Za van 08:00 tot 17:00.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a

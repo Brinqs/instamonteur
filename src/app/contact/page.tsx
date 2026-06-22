@@ -6,9 +6,9 @@ import { siteConfig } from "@/lib/siteConfig";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact | Insta Monteur – Loodgieter Rotterdam",
   description:
-    "Neem contact op met InstaMonteur voor een offerte of spoedservice. Bereikbaar op werkdagen en in het weekend.",
+    "Neem contact op met Insta Monteur voor een vrijblijvende offerte of spoedservice. Bereikbaar maandag t/m zaterdag van 08:00 tot 17:00.",
   alternates: {
     canonical: `${siteConfig.url}/contact`,
   },

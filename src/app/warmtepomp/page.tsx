@@ -88,7 +88,7 @@ export default function WarmtepompPage() {
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
               <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                Rotterdam en omgeving · Ma–Vr 08:00–17:00
+                Rotterdam en omgeving · Ma–Za 08:00–17:00
               </span>
             </div>
           </AnimateIn>
@@ -371,7 +371,7 @@ export default function WarmtepompPage() {
               <div className="flex flex-col gap-4">
                 <p className="text-white/80 text-lg leading-relaxed">
                   Neem direct contact op of vraag een vrijblijvende offerte aan. Wij zijn Ma t/m Zo
-                  bereikbaar op werkdagen van 08:00 tot 17:00.
+                  bereikbaar op Ma t/m Za van 08:00 tot 17:00.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
