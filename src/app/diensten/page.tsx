@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Flame, Zap, Droplets, Wind, Wrench, Clock } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { AnimateIn } from "@/components/AnimateIn";
 import { CTA } from "@/components/sections/CTA";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Onze Diensten",
+  title: "Diensten | Insta Monteur – Loodgieter Rotterdam",
   description:
-    "Bekijk alle installatiediensten van InstaMonteur: CV-ketel, elektra, loodgieterswerk, airconditioning, ventilatie en spoedservice.",
+    "Bekijk alle diensten van Insta Monteur: lekkage reparatie, ontstopping, CV ketel, warmtepomp, sanitair en verwarming. Snel en vakkundig in Rotterdam en omgeving.",
   alternates: {
     canonical: `${siteConfig.url}/diensten`,
   },
@@ -17,101 +17,107 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: Droplets,
-    title: "Loodgieter",
-    description:
-      "Van een druppelende kraan tot het volledig aanleggen van een badkamer. Wij lossen al uw sanitaire problemen snel op.",
-    features: ["Lekkage reparatie", "Sanitair plaatsen", "Leidingen aanleggen", "Rioolontstopping"],
-    href: "/loodgieter",
-    badge: "Populair",
+    title: "Lekkage",
+    description: "Snelle opsporing en reparatie van waterlekkages. Van druppelende kraan tot ernstige waterschade.",
+    href: "/diensten/lekkage",
+    illustratie: "/images/dienst-lekkage-3d.png",
   },
   {
-    icon: Flame,
-    title: "CV-ketel & verwarming",
-    description:
-      "Installatie, onderhoud en reparatie van CV-ketels. Wij werken met alle merken: Remeha, Intergas, Nefit, Vaillant en meer.",
-    features: ["Installatie nieuwe ketel", "Storing diagnose & reparatie", "Jaarlijks onderhoud", "Ketel vervangen"],
+    title: "Ontstopping",
+    description: "Verstopte afvoer, toilet of riool? Wij lossen het snel op met hogedruk of camera-inspectie.",
+    href: "/diensten/ontstopping",
+    illustratie: "/images/dienst-ontstopping-3d.png",
+  },
+  {
+    title: "CV Ketel",
+    description: "Installatie, onderhoud en reparatie van CV-ketels. Alle merken en types, vaste tarieven.",
     href: "/cv-ketels",
-    badge: null,
+    illustratie: "/images/dienst-cvketel-3d.png",
   },
   {
-    icon: Wrench,
     title: "Warmtepomp",
-    description:
-      "Duurzaam verwarmen met een warmtepomp. Wij installeren lucht/water en hybride warmtepompen in regio Rotterdam.",
-    features: ["Lucht/water warmtepomp", "Hybride systemen", "Periodiek onderhoud", "Gratis advies"],
+    description: "Duurzame warmtepomp laten installeren? Wij adviseren, installeren en onderhouden.",
     href: "/warmtepomp",
-    badge: null,
+    illustratie: "/images/dienst-warmtepomp-3d.png",
   },
   {
-    icon: Clock,
-    title: "Spoed loodgieter",
-    description:
-      "Lekkage of storing? Wij zijn snel ter plaatse. Onze spoedmonteurs zijn binnen 1 uur bij u in Rotterdam en omgeving.",
-    features: ["Snel ter plaatse", "Binnen 1 uur ter plaatse", "Bereikbaar op werkdagen", "Vaste tarieven"],
-    href: "/spoed-loodgieter",
-    badge: "Snel",
+    title: "Sanitair",
+    description: "Montage en aansluiting van sanitaire voorzieningen. Van toilet tot complete doucheset.",
+    href: "/diensten/sanitair",
+    illustratie: "/images/dienst-sanitair-3d.png",
+  },
+  {
+    title: "Verwarming",
+    description: "Radiatoren, vloerverwarming en verwarmingssystemen. Installatie, reparatie en onderhoud.",
+    href: "/diensten/verwarming",
+    illustratie: "/images/dienst-verwarming-3d.png",
   },
 ];
 
 export default function DienstenPage() {
   return (
     <>
-      {/* Page header */}
-      <section className="bg-brand pt-32 pb-16">
-        <div className="container mx-auto px-4 max-w-6xl text-center">
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Onze diensten</h1>
-          <p className="text-white/70 text-lg max-w-xl mx-auto">
-            Van CV-ketel tot elektra — wij zijn uw totaaloplossing voor alle installaties.
-          </p>
+      {/* Hero */}
+      <section className="bg-white pt-[120px] pb-16">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <AnimateIn variant="fadeIn">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
+              <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
+                Rotterdam en omgeving · Ma–Za 08:00–17:00
+              </span>
+            </div>
+          </AnimateIn>
+          <AnimateIn variant="fadeUp" delay={100}>
+            <h1
+              className="font-black text-brand leading-[0.9] tracking-[-0.04em] mb-6"
+              style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
+            >
+              ONZE <span className="text-orange-500">DIENSTEN</span>
+            </h1>
+          </AnimateIn>
+          <AnimateIn variant="fadeUp" delay={200}>
+            <p className="text-foreground/50 text-base lg:text-lg max-w-xl leading-relaxed">
+              Van lekkage tot verwarming — wij zijn uw specialist voor al uw loodgieter- en installatiewerk in Rotterdam en omgeving.
+            </p>
+          </AnimateIn>
         </div>
       </section>
 
       {/* Services grid */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => {
-              const Icon = service.icon;
-              return (
-                <Card
-                  key={service.title}
-                  className="group border-border hover:border-orange-200 hover:shadow-lg transition-all duration-300"
+      <section className="bg-white pb-24">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, i) => (
+              <AnimateIn key={service.title} variant="fadeUp" delay={i * 80}>
+                <Link
+                  href={service.href}
+                  className="group flex flex-col border-2 border-border rounded-2xl overflow-hidden hover:border-brand transition-colors h-full"
                 >
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-brand/8 group-hover:bg-orange-50 flex items-center justify-center transition-colors">
-                        <Icon className="w-6 h-6 text-brand group-hover:text-orange-500 transition-colors" />
-                      </div>
-                      {service.badge && (
-                        <Badge className="bg-orange-100 text-orange-600 border-orange-200 text-xs">
-                          {service.badge}
-                        </Badge>
-                      )}
-                    </div>
-                    <h2 className="font-bold text-xl text-brand mb-2">{service.title}</h2>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  <div className="relative h-48 bg-[#f8f8f6] flex items-center justify-center overflow-hidden">
+                    <Image
+                      src={service.illustratie}
+                      alt={`${service.title} illustratie`}
+                      fill
+                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h2 className="font-black text-xl text-brand mb-2 group-hover:text-orange-500 transition-colors">
+                      {service.title}
+                    </h2>
+                    <p className="text-sm text-foreground/50 leading-relaxed flex-1">
                       {service.description}
                     </p>
-                    <ul className="space-y-1.5 mb-5">
-                      {service.features.map((f) => (
-                        <li key={f} className="flex items-center gap-2 text-sm text-foreground/80">
-                          <span className="w-1.5 h-1.5 rounded-full bg-orange-400 shrink-0" />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link
-                      href={service.href}
-                      className="inline-flex items-center text-orange-500 hover:text-orange-600 text-sm font-semibold transition-colors"
-                    >
+                    <div className="flex items-center gap-2 mt-5 text-sm font-bold text-brand group-hover:text-orange-500 transition-colors">
                       Meer informatie
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              );
-            })}
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </AnimateIn>
+            ))}
           </div>
         </div>
       </section>

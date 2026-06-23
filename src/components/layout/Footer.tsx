@@ -4,9 +4,12 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { siteConfig } from "@/lib/siteConfig";
 
 const services = [
-  { label: "Loodgieter", href: "/loodgieter" },
-  { label: "CV-ketel installatie", href: "/cv-ketels" },
+  { label: "Lekkage reparatie", href: "/diensten/lekkage" },
+  { label: "Ontstopping", href: "/diensten/ontstopping" },
+  { label: "CV Ketel", href: "/cv-ketels" },
   { label: "Warmtepomp", href: "/warmtepomp" },
+  { label: "Sanitair", href: "/diensten/sanitair" },
+  { label: "Verwarming", href: "/diensten/verwarming" },
   { label: "Spoed loodgieter", href: "/spoed-loodgieter" },
 ];
 
