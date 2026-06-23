@@ -251,7 +251,7 @@ export default async function DienstPage({
             className="font-black leading-none whitespace-nowrap"
             style={{ fontSize: "clamp(6rem, 16vw, 14rem)", letterSpacing: "-0.04em", color: "rgba(15,40,120,0.04)" }}
           >
-            {data.name.toUpperCase()}
+            {dienst.toUpperCase()}
           </span>
         </div>
 
