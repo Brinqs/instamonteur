@@ -8,6 +8,7 @@ import { siteConfig } from "@/lib/siteConfig";
 
 type DienstData = {
   name: string;
+  heroHeading?: { before: string; orange: string; after: string };
   intro: string;
   description: string;
   illustratie: string;
@@ -19,6 +20,7 @@ type DienstData = {
 const diensten: Record<string, DienstData> = {
   lekkage: {
     name: "Lekkage reparatie",
+    heroHeading: { before: "Last van ", orange: "Lekkage", after: "?" },
     intro:
       "Waterlekkage ontdekt? Sluit direct de hoofdkraan af en bel ons. Wij sporen de lekkage snel op en repareren het vakkundig — netjes, zonder gedoe en tegen vaste tarieven.",
     description:
@@ -275,7 +277,15 @@ export default async function DienstPage({
 
             <AnimateIn variant="fadeUp" delay={100}>
               <h1 className="font-black text-brand leading-[0.9] tracking-[-0.04em] mb-8" style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}>
-                <span className="text-orange-500">{data.name}</span>
+                {data.heroHeading ? (
+                  <>
+                    {data.heroHeading.before}
+                    <span className="text-orange-500">{data.heroHeading.orange}</span>
+                    {data.heroHeading.after}
+                  </>
+                ) : (
+                  <span className="text-orange-500">{data.name}</span>
+                )}
               </h1>
             </AnimateIn>
 
