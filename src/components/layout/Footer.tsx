@@ -66,7 +66,7 @@ export function Footer() {
             <h3 className="font-semibold text-sm uppercase tracking-wider text-orange-400 mb-4">
               Werkgebied
             </h3>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+            <ul className="space-y-2.5">
               {cities.map((item) => (
                 <li key={item.href}>
                   <Link
