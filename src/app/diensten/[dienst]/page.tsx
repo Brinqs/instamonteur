@@ -243,6 +243,18 @@ export default async function DienstPage({
 
       {/* Hero */}
       <section className="bg-white pt-[120px] pb-16 lg:pb-24 relative overflow-clip lg:min-h-[600px]">
+        <div
+          className="absolute inset-y-0 left-0 right-0 flex items-center pointer-events-none select-none overflow-hidden"
+          aria-hidden="true"
+        >
+          <span
+            className="font-black leading-none whitespace-nowrap"
+            style={{ fontSize: "clamp(6rem, 16vw, 14rem)", letterSpacing: "-0.04em", color: "rgba(15,40,120,0.04)" }}
+          >
+            {data.name.toUpperCase()}
+          </span>
+        </div>
+
         <div className="hidden lg:block absolute top-0 right-0 w-[38%] h-full" style={{ animation: "fadeUpIn 0.7s cubic-bezier(0,0,0.2,1) 300ms both" }}>
           <Image
             src={data.illustratie}
