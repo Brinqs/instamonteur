@@ -203,11 +203,49 @@ export default async function LoodgieterStadPage({
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+      { "@type": "ListItem", position: 2, name: "Loodgieter", item: `${siteConfig.url}/loodgieter` },
+      { "@type": "ListItem", position: 3, name: `Loodgieter ${city.name}`, item: `${siteConfig.url}/loodgieter-${stad}` },
+    ],
+  };
+
+  const ratingSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: `Insta Monteur – Loodgieter ${city.name}`,
+    url: `${siteConfig.url}/loodgieter-${stad}`,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: reviews.length.toString(),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    review: reviews.map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.name },
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      reviewBody: r.text,
+    })),
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingSchema) }}
       />
 
       {/* Hero */}
@@ -243,10 +281,19 @@ export default async function LoodgieterStadPage({
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className={isRotterdam ? "lg:w-[50%] lg:pr-6" : ""}>
             <AnimateIn variant="fadeIn">
+              <nav aria-label="breadcrumb" className="mb-6">
+                <ol className="flex items-center gap-1.5 text-xs text-foreground/40 font-medium">
+                  <li><Link href="/" className="hover:text-orange-500 transition-colors">Home</Link></li>
+                  <li aria-hidden="true">/</li>
+                  <li><Link href="/loodgieter" className="hover:text-orange-500 transition-colors">Loodgieter</Link></li>
+                  <li aria-hidden="true">/</li>
+                  <li className="text-orange-500">{city.name}</li>
+                </ol>
+              </nav>
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-10 h-[3px] bg-orange-500 rounded-full" />
                 <span className="text-orange-500 font-bold text-xs uppercase tracking-[0.2em]">
-                  Rotterdam en omgeving · Ma–Za 08:00–17:00
+                  {city.name} en omgeving · Ma–Za 08:00–17:00
                 </span>
               </div>
             </AnimateIn>

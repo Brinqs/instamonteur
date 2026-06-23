@@ -15,10 +15,16 @@ const steden = [
   { naam: "Vlaardingen", href: "/loodgieter-vlaardingen", illustratie: "/images/stad-vlaardingen-2d.png", beschrijving: "Uw loodgieter in Vlaardingen, altijd snel en eerlijk." },
 ];
 
+const diensten = [
+  { label: "Lekkage", beschrijving: "Opsporing en reparatie van waterlekkages", href: "/diensten/lekkage", illustratie: "/images/dienst-lekkage-3d.png" },
+  { label: "Ontstopping", beschrijving: "Verstopte afvoer, toilet of riool", href: "/diensten/ontstopping", illustratie: "/images/dienst-ontstopping-3d.png" },
+  { label: "CV Ketel", beschrijving: "Installatie, onderhoud en reparatie", href: "/cv-ketels", illustratie: "/images/dienst-cvketel-3d.png" },
+  { label: "Warmtepomp", beschrijving: "Duurzaam verwarmen, gratis advies", href: "/warmtepomp", illustratie: "/images/dienst-warmtepomp-3d.png" },
+  { label: "Sanitair", beschrijving: "Montage van toilet, douche en meer", href: "/diensten/sanitair", illustratie: "/images/dienst-sanitair-3d.png" },
+  { label: "Verwarming", beschrijving: "Radiatoren en vloerverwarming", href: "/diensten/verwarming", illustratie: "/images/dienst-verwarming-3d.png" },
+];
+
 const navLinks = [
-  { label: "Loodgieter", href: "/loodgieter" },
-  { label: "CV-ketels", href: "/cv-ketels" },
-  { label: "Warmtepomp", href: "/warmtepomp" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -26,8 +32,11 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [stedendropdown, setStedendropdown] = useState(false);
+  const [dienstendropdown, setDienstendropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const dienstenRef = useRef<HTMLDivElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dienstenCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const openDropdown = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -35,6 +44,14 @@ export function Header() {
   };
   const closeDropdown = () => {
     closeTimer.current = setTimeout(() => setStedendropdown(false), 150);
+  };
+
+  const openDiensten = () => {
+    if (dienstenCloseTimer.current) clearTimeout(dienstenCloseTimer.current);
+    setDienstendropdown(true);
+  };
+  const closeDiensten = () => {
+    dienstenCloseTimer.current = setTimeout(() => setDienstendropdown(false), 150);
   };
 
   useEffect(() => {
@@ -78,7 +95,7 @@ export function Header() {
 
             {/* Desktop nav */}
             <nav className="hidden lg:flex items-center gap-6">
-              {/* Steden dropdown */}
+              {/* Steden dropdown — eerst */}
               <div
                 ref={dropdownRef}
                 className="relative"
@@ -141,6 +158,69 @@ export function Header() {
                 )}
               </div>
 
+              {/* Diensten dropdown */}
+              <div
+                ref={dienstenRef}
+                className="relative"
+                onMouseEnter={openDiensten}
+                onMouseLeave={closeDiensten}
+              >
+                <Link
+                  href="/diensten"
+                  onClick={() => setDienstendropdown(false)}
+                  className="flex items-center gap-1 text-sm font-semibold text-foreground/60 hover:text-brand transition-colors"
+                >
+                  Diensten
+                  <ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-200", dienstendropdown && "rotate-180")} />
+                </Link>
+
+                {dienstendropdown && (
+                  <div
+                    className="fixed left-0 right-0 bg-white border-b border-border shadow-2xl z-50"
+                    style={{ top: scrolled ? "63px" : "79px" }}
+                    onMouseEnter={openDiensten}
+                    onMouseLeave={closeDiensten}
+                  >
+                    <div className="container mx-auto px-6 max-w-7xl">
+                      <div className="grid grid-cols-6 gap-4 py-6">
+                        {diensten.map((dienst) => (
+                          <Link
+                            key={dienst.label}
+                            href={dienst.href}
+                            onClick={() => setDienstendropdown(false)}
+                            className="group flex flex-col gap-2 rounded-xl p-3 hover:bg-orange-50 transition-colors"
+                          >
+                            <div className="relative w-full h-20 rounded-lg overflow-hidden bg-[#f8f8f6]">
+                              <Image
+                                src={dienst.illustratie}
+                                alt={dienst.label}
+                                fill
+                                className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                                unoptimized
+                              />
+                            </div>
+                            <span className="text-sm font-bold text-brand group-hover:text-orange-500 transition-colors">
+                              {dienst.label}
+                            </span>
+                            <p className="text-xs text-foreground/50 leading-snug">{dienst.beschrijving}</p>
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="border-t border-border pt-4 pb-8">
+                        <Link
+                          href="/diensten"
+                          onClick={() => setDienstendropdown(false)}
+                          className="inline-flex items-center gap-2 text-sm font-bold text-brand hover:text-orange-500 transition-colors"
+                        >
+                          Bekijk alle diensten
+                          <ChevronDown className="w-3.5 h-3.5 -rotate-90" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
               {navLinks.map((item) => (
                 <Link
                   key={item.href}
@@ -150,6 +230,12 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+              <Link
+                href="/spoed-loodgieter"
+                className="inline-flex items-center gap-2 bg-orange-500 text-white font-bold px-5 py-2.5 rounded-full text-sm hover:bg-orange-600 transition-colors"
+              >
+                Spoed
+              </Link>
             </nav>
 
             {/* Phone + mobile menu */}
@@ -191,6 +277,18 @@ export function Header() {
               </button>
             </div>
             <nav className="flex-1 px-4 py-6 flex flex-col gap-1 overflow-y-auto">
+              <p className="text-xs font-bold text-foreground/30 uppercase tracking-widest px-3 mb-1">Diensten</p>
+              {diensten.map((dienst) => (
+                <Link
+                  key={dienst.href}
+                  href={dienst.href}
+                  onClick={() => setOpen(false)}
+                  className="font-semibold text-sm py-2.5 px-3 rounded-xl hover:bg-orange-50 hover:text-orange-500 transition-colors text-brand"
+                >
+                  {dienst.label}
+                </Link>
+              ))}
+              <div className="h-px bg-border my-3" />
               <p className="text-xs font-bold text-foreground/30 uppercase tracking-widest px-3 mb-1">Steden</p>
               {steden.map((stad) => (
                 <Link
