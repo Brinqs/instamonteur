@@ -241,12 +241,12 @@ export default async function DienstPage({
 
       {/* Hero */}
       <section className="bg-white pt-[120px] pb-16 lg:pb-24 relative overflow-clip lg:min-h-[600px]">
-        <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full" style={{ animation: "fadeUpIn 0.7s cubic-bezier(0,0,0.2,1) 300ms both" }}>
+        <div className="hidden lg:block absolute top-0 right-0 w-[38%] h-full" style={{ animation: "fadeUpIn 0.7s cubic-bezier(0,0,0.2,1) 300ms both" }}>
           <Image
             src={data.illustratie}
             alt={`${data.name} illustratie`}
             fill
-            className="object-contain object-center p-12"
+            className="object-contain object-center p-20"
             priority
             sizes="50vw"
             unoptimized
@@ -317,7 +317,7 @@ export default async function DienstPage({
 
             {/* Mobile illustratie */}
             <AnimateIn variant="fadeUp" delay={440}>
-              <div className="lg:hidden relative aspect-[4/3] rounded-2xl overflow-hidden mt-10 bg-[#f8f8f6]">
+              <div className="lg:hidden relative aspect-[4/3] rounded-2xl overflow-hidden mt-10 bg-[#f8f8f6] max-h-48">
                 <Image
                   src={data.illustratie}
                   alt={`${data.name} illustratie`}
