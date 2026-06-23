@@ -22,7 +22,7 @@ const diensten: Record<string, DienstData> = {
     name: "Lekkage reparatie",
     heroHeading: { before: "Last van ", orange: "Lekkage", after: "" },
     intro:
-      "Waterlekkage ontdekt? Sluit direct de hoofdkraan af en bel ons. Wij sporen de lekkage snel op en repareren het vakkundig — netjes, zonder gedoe en tegen vaste tarieven.",
+      "Waterlekkage ontdekt? Sluit direct de hoofdkraan af en bel ons. Wij sporen de lekkage snel op en repareren het vakkundig, netjes, zonder gedoe en tegen vaste tarieven.",
     description:
       "Een lekkage kan flinke schade aanrichten als het niet snel wordt opgelost. Bij Insta Monteur zijn we er snel bij. We werken met moderne lekdetectie apparatuur zodat we de bron vinden zonder onnodige sloopschade.\n\nOf het nu gaat om een lekkende kraan, een gescheurde leiding of verborgen waterschade achter de muur — wij lossen het op. Netjes, vakkundig en met garantie op het werk.",
     illustratie: "/images/dienst-lekkage-3d.png",
