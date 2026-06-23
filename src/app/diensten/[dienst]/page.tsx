@@ -20,7 +20,7 @@ type DienstData = {
 const diensten: Record<string, DienstData> = {
   lekkage: {
     name: "Lekkage reparatie",
-    heroHeading: { before: "Last van ", orange: "Lekkage", after: "?" },
+    heroHeading: { before: "Last van ", orange: "Lekkage", after: "" },
     intro:
       "Waterlekkage ontdekt? Sluit direct de hoofdkraan af en bel ons. Wij sporen de lekkage snel op en repareren het vakkundig — netjes, zonder gedoe en tegen vaste tarieven.",
     description:
