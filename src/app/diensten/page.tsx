@@ -78,7 +78,7 @@ export default function DienstenPage() {
           </AnimateIn>
           <AnimateIn variant="fadeUp" delay={200}>
             <p className="text-foreground/50 text-base lg:text-lg max-w-xl leading-relaxed">
-              Van lekkage tot verwarming — wij zijn uw specialist voor al uw loodgieter- en installatiewerk in Rotterdam en omgeving.
+              Van lekkage tot verwarming, wij zijn uw specialist voor al uw loodgieter- en installatiewerk in Rotterdam en omgeving.
             </p>
           </AnimateIn>
         </div>
